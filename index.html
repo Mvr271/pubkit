@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PubMaster Pro - 500+ Templates Publicitaires Premium</title>
-    <meta name="description" content="Accédez à plus de 500 templates publicitaires Canva prêts à l'emploi. Boostez votre marketing avec des designs professionnels.">
+    <title>PubKit - Création de Visuels Publicitaires Professionnels</title>
+    <meta name="description" content="Je crée vos visuels publicitaires professionnels pour Facebook, Instagram et plus. Designs sur-mesure qui convertissent.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -246,7 +246,7 @@
         }
 
         .hero-badge::before {
-            content: '🔥';
+            content: '🎨';
         }
 
         .hero h1 {
@@ -542,38 +542,68 @@
             font-size: 0.95rem;
         }
 
+        /* Process Section */
+        .process {
+            padding: 6rem 2rem;
+            background: var(--light);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -1rem;
+            top: 40px;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            font-family: 'Instrument Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
         /* Examples Section */
         .examples {
             padding: 6rem 2rem;
-            background: linear-gradient(180deg, var(--light) 0%, white 100%);
-        }
-
-        .examples-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 0.8rem 1.5rem;
-            border: 2px solid #e0e0e0;
             background: white;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: inherit;
-            font-size: 0.95rem;
-            color: var(--text);
-        }
-
-        .tab-btn:hover,
-        .tab-btn.active {
-            border-color: var(--primary);
-            background: var(--primary);
-            color: white;
         }
 
         .examples-grid {
@@ -639,6 +669,23 @@
             font-size: 0.9rem;
             text-align: center;
             padding: 1rem;
+        }
+
+        .examples-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 16px;
+        }
+
+        .examples-note p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .examples-note strong {
+            color: var(--primary);
         }
 
         /* Pricing Section */
@@ -866,69 +913,6 @@
             line-height: 1.8;
         }
 
-        /* Testimonials */
-        .testimonials {
-            padding: 6rem 2rem;
-            background: var(--light);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-        }
-
-        .testimonial-stars {
-            color: var(--gold);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-text {
-            font-size: 1rem;
-            color: var(--text);
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .testimonial-info h4 {
-            font-family: 'Instrument Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .testimonial-info p {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
         /* CTA Section */
         .cta {
             padding: 6rem 2rem;
@@ -986,92 +970,108 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--light);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-method-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .contact-method-info h4 {
+            font-family: 'Instrument Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .contact-method-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
         /* Footer */
         .footer {
             background: var(--secondary);
             color: white;
-            padding: 4rem 2rem 2rem;
+            padding: 3rem 2rem;
+            text-align: center;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
         }
 
-        .footer-brand .logo {
+        .footer .logo {
             color: white;
+            justify-content: center;
             margin-bottom: 1rem;
         }
 
-        .footer-brand p {
+        .footer p {
             color: rgba(255,255,255,0.6);
-            font-size: 0.95rem;
-            max-width: 300px;
+            font-size: 0.9rem;
         }
 
-        .footer-links h4 {
-            font-family: 'Instrument Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+        .footer-links-inline {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
+        .footer-links-inline a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.3s;
         }
 
-        .footer-links a:hover {
+        .footer-links-inline a:hover {
             color: var(--primary);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
         }
 
         /* Mobile Responsive */
@@ -1111,6 +1111,15 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+
+            .process-step::after {
+                display: none;
+            }
+
             .examples-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -1124,14 +1133,6 @@
 
             .pricing-card.featured {
                 transform: none;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1164,6 +1165,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
             .examples-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1191,19 +1196,9 @@
                 font-size: 2rem;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-brand p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .footer-bottom {
+            .contact-methods {
                 flex-direction: column;
-                gap: 1rem;
+                align-items: center;
             }
         }
     </style>
@@ -1214,14 +1209,14 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <div class="logo-icon">P</div>
-                PubMaster
+                PubKit
             </a>
             <ul class="nav-links">
-                <li><a href="#features">Avantages</a></li>
-                <li><a href="#examples">Exemples</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Réalisations</a></li>
                 <li><a href="#pricing">Tarifs</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#pricing" class="nav-cta">Commencer</a></li>
+                <li><a href="#contact" class="nav-cta">Me contacter</a></li>
             </ul>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
@@ -1237,44 +1232,44 @@
         <div class="hero-glow-2"></div>
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-badge">Nouveau : 500+ Templates</div>
-                <h1>Transformez votre <span>Marketing</span> avec des Designs Pro</h1>
-                <p class="hero-text">Accédez instantanément à plus de 500 templates publicitaires Canva premium. Créez des visuels qui convertissent en quelques minutes.</p>
+                <div class="hero-badge">Création sur-mesure</div>
+                <h1>Je crée vos <span>Visuels Publicitaires</span> qui convertissent</h1>
+                <p class="hero-text">Confiez-moi la création de vos publicités Facebook, Instagram, Stories et plus. Des designs professionnels livrés rapidement, prêts à performer.</p>
                 <div class="hero-buttons">
-                    <a href="#pricing" class="btn btn-primary">Voir les offres →</a>
-                    <a href="#examples" class="btn btn-secondary">Voir les exemples</a>
+                    <a href="#pricing" class="btn btn-primary">Voir les tarifs →</a>
+                    <a href="#portfolio" class="btn btn-secondary">Mes réalisations</a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Templates</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Catégories</div>
+                        <div class="stat-number">48h</div>
+                        <div class="stat-label">Livraison rapide</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">100%</div>
-                        <div class="stat-label">Modifiables</div>
+                        <div class="stat-label">Sur-mesure</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Révisions</div>
                     </div>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="templates-showcase">
                     <div class="template-card template-1">
-                        <div class="template-placeholder">🛍️ E-commerce<br>Template</div>
+                        <div class="template-placeholder">🛍️ E-commerce</div>
                     </div>
                     <div class="template-card template-2">
-                        <div class="template-placeholder style-2">📱 Social<br>Media</div>
+                        <div class="template-placeholder style-2">📱 Social Media</div>
                     </div>
                     <div class="template-card template-3">
-                        <div class="template-placeholder style-3">🎯 Facebook<br>Ads</div>
+                        <div class="template-placeholder style-3">🎯 Facebook Ads</div>
                     </div>
                     <div class="template-card template-4">
-                        <div class="template-placeholder style-4">📧 Email<br>Marketing</div>
+                        <div class="template-placeholder style-4">📧 Email</div>
                     </div>
                     <div class="template-card template-5">
-                        <div class="template-placeholder style-5">🎨 Stories<br>Instagram</div>
+                        <div class="template-placeholder style-5">🎨 Stories</div>
                     </div>
                 </div>
             </div>
@@ -1282,62 +1277,88 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Pourquoi nous choisir</span>
-                <h2>Tout ce qu'il vous faut pour réussir</h2>
-                <p>Des outils professionnels accessibles à tous les budgets</p>
+                <span class="section-tag">Mes services</span>
+                <h2>Des visuels pour tous vos besoins</h2>
+                <p>Je crée des designs adaptés à chaque plateforme et objectif</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Prêt à l'emploi</h3>
-                    <p>Tous les templates sont entièrement personnalisables sur Canva. Modifiez textes, couleurs et images en quelques clics.</p>
+                    <div class="feature-icon">📱</div>
+                    <h3>Facebook & Instagram Ads</h3>
+                    <p>Publicités optimisées pour le fil d'actualité, stories et reels. Formats carrés, verticaux et horizontaux.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Design Premium</h3>
-                    <p>Chaque template est créé par des designers professionnels pour maximiser l'impact de vos publicités.</p>
+                    <div class="feature-icon">🛒</div>
+                    <h3>E-commerce</h3>
+                    <p>Visuels produits, bannières promotionnelles, carrousels. Parfait pour booster vos ventes en ligne.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Toutes les niches</h3>
-                    <p>E-commerce, coaching, restauration, immobilier... Trouvez le template parfait pour votre secteur.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Mises à jour</h3>
-                    <p>Nouveaux templates ajoutés régulièrement. Restez à la pointe des tendances publicitaires.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Économisez</h3>
-                    <p>Fini les frais de graphiste. Créez vous-même des visuels professionnels pour une fraction du prix.</p>
+                    <div class="feature-icon">📖</div>
+                    <h3>Stories & Reels</h3>
+                    <p>Contenus verticaux captivants pour Instagram, Facebook et TikTok. Animations possibles.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
-                    <h3>Optimisés conversion</h3>
-                    <p>Templates conçus avec les meilleures pratiques marketing pour maximiser vos taux de clics.</p>
+                    <h3>Carrousels</h3>
+                    <p>Séquences de visuels pour raconter une histoire ou présenter plusieurs produits/services.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Coaching & Formation</h3>
+                    <p>Visuels pour vos lancements, webinaires, programmes. Design qui inspire confiance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍔</div>
+                    <h3>Restauration & Local</h3>
+                    <p>Menus, promos, événements. Visuels appétissants pour attirer des clients locaux.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Comment ça marche</span>
+                <h2>Un processus simple et rapide</h2>
+                <p>De votre idée à vos visuels en 4 étapes</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Vous me contactez</h3>
+                    <p>Décrivez votre projet et vos besoins</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Je vous conseille</h3>
+                    <p>On définit ensemble le meilleur format</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Je crée vos visuels</h3>
+                    <p>Designs sur-mesure sous 48h</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Vous validez</h3>
+                    <p>Révisions illimitées jusqu'à satisfaction</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Examples Section -->
-    <section class="examples" id="examples">
+    <section class="examples" id="portfolio">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Portfolio</span>
-                <h2>Découvrez nos templates</h2>
-                <p>Un aperçu de notre collection premium</p>
-            </div>
-            <div class="examples-tabs">
-                <button class="tab-btn active">Tous</button>
-                <button class="tab-btn">Facebook Ads</button>
-                <button class="tab-btn">Instagram</button>
-                <button class="tab-btn">E-commerce</button>
-                <button class="tab-btn">Stories</button>
+                <h2>Exemples de réalisations</h2>
+                <p>Quelques visuels créés pour mes clients</p>
             </div>
             <div class="examples-grid">
                 <div class="example-card">
@@ -1353,7 +1374,7 @@
                 </div>
                 <div class="example-card">
                     <div class="example-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        💄<br>Beauté & Cosmétique
+                        💄<br>Beauté
                     </div>
                     <div class="overlay">
                         <div class="overlay-content">
@@ -1364,7 +1385,7 @@
                 </div>
                 <div class="example-card">
                     <div class="example-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        🏋️<br>Fitness & Sport
+                        🏋️<br>Fitness
                     </div>
                     <div class="overlay">
                         <div class="overlay-content">
@@ -1375,7 +1396,7 @@
                 </div>
                 <div class="example-card">
                     <div class="example-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                        🍔<br>Restauration
+                        🍔<br>Restaurant
                     </div>
                     <div class="overlay">
                         <div class="overlay-content">
@@ -1390,8 +1411,8 @@
                     </div>
                     <div class="overlay">
                         <div class="overlay-content">
-                            <h4>Annonce Immobilière</h4>
-                            <p>Carousel</p>
+                            <h4>Annonce Immo</h4>
+                            <p>Carrousel</p>
                         </div>
                     </div>
                 </div>
@@ -1419,15 +1440,18 @@
                 </div>
                 <div class="example-card">
                     <div class="example-placeholder" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); color: #333;">
-                        💼<br>Business
+                        💼<br>Coaching
                     </div>
                     <div class="overlay">
                         <div class="overlay-content">
-                            <h4>Service Pro</h4>
-                            <p>LinkedIn Ads</p>
+                            <h4>Programme Coaching</h4>
+                            <p>Carrousel</p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="examples-note">
+                <p>💡 <strong>Ces visuels sont des exemples.</strong> Chaque création est unique et adaptée à votre marque et vos objectifs.</p>
             </div>
         </div>
     </section>
@@ -1437,103 +1461,57 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--gold);">Tarifs</span>
-                <h2>Choisissez votre pack</h2>
-                <p>Un investissement qui se rentabilise dès la première utilisation</p>
+                <h2>Des offres adaptées à vos besoins</h2>
+                <p>Choisissez le pack qui vous convient</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <div class="pricing-name">Starter</div>
                         <div class="pricing-price">29€</div>
-                        <div class="pricing-desc">Paiement unique</div>
+                        <div class="pricing-desc">Idéal pour tester</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>100 templates premium</li>
-                        <li>5 catégories au choix</li>
-                        <li>Format Canva</li>
-                        <li>Guide d'utilisation</li>
-                        <li>Support email</li>
+                        <li>3 visuels publicitaires</li>
+                        <li>1 format au choix</li>
+                        <li>Livraison 48h</li>
+                        <li>2 révisions incluses</li>
+                        <li>Fichiers HD (PNG/JPG)</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary" style="background: var(--light); color: var(--text);">Choisir Starter</a>
+                    <a href="#contact" class="btn btn-secondary" style="background: var(--light); color: var(--text);">Choisir Starter</a>
                 </div>
                 <div class="pricing-card featured">
                     <div class="pricing-badge">⭐ Populaire</div>
                     <div class="pricing-header">
                         <div class="pricing-name">Pro</div>
-                        <div class="pricing-price">79€</div>
-                        <div class="pricing-desc">Paiement unique</div>
+                        <div class="pricing-price">69€</div>
+                        <div class="pricing-desc">Le plus demandé</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>300 templates premium</li>
-                        <li>Toutes les catégories</li>
-                        <li>Format Canva</li>
-                        <li>Bonus : 50 mockups</li>
-                        <li>Mises à jour 6 mois</li>
-                        <li>Support prioritaire</li>
+                        <li>8 visuels publicitaires</li>
+                        <li>Tous formats inclus</li>
+                        <li>Livraison 48h</li>
+                        <li>Révisions illimitées</li>
+                        <li>Fichiers HD + sources</li>
+                        <li>Conseils personnalisés</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Choisir Pro</a>
+                    <a href="#contact" class="btn btn-primary">Choisir Pro</a>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <div class="pricing-name">Agence</div>
+                        <div class="pricing-name">Business</div>
                         <div class="pricing-price">149€</div>
-                        <div class="pricing-desc">Paiement unique</div>
+                        <div class="pricing-desc">Pour les pros</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>500+ templates complets</li>
-                        <li>Toutes les catégories</li>
-                        <li>Licence commerciale</li>
-                        <li>Bonus : 100 mockups</li>
-                        <li>Mises à jour à vie</li>
-                        <li>Support VIP WhatsApp</li>
+                        <li>20 visuels publicitaires</li>
+                        <li>Tous formats inclus</li>
+                        <li>Livraison 72h</li>
+                        <li>Révisions illimitées</li>
+                        <li>Fichiers HD + sources</li>
+                        <li>Support prioritaire WhatsApp</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary" style="background: var(--light); color: var(--text);">Choisir Agence</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Témoignages</span>
-                <h2>Ce qu'en disent nos clients</h2>
-                <p>Des entrepreneurs satisfaits partout en France</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"J'ai économisé des heures de travail et des centaines d'euros en graphiste. Les templates sont vraiment pro et faciles à personnaliser."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">S</div>
-                        <div class="testimonial-info">
-                            <h4>Sarah M.</h4>
-                            <p>E-commerce Mode</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Mes publicités ont un look beaucoup plus professionnel maintenant. Le pack Agence était un excellent investissement pour mon activité."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">K</div>
-                        <div class="testimonial-info">
-                            <h4>Karim B.</h4>
-                            <p>Coach Business</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"La variété des templates est impressionnante. J'utilise le pack pour tous mes clients en tant que community manager freelance."</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">L</div>
-                        <div class="testimonial-info">
-                            <h4>Laura D.</h4>
-                            <p>Community Manager</p>
-                        </div>
-                    </div>
+                    <a href="#contact" class="btn btn-secondary" style="background: var(--light); color: var(--text);">Choisir Business</a>
                 </div>
             </div>
         </div>
@@ -1550,57 +1528,93 @@
             <div class="faq-grid">
                 <div class="faq-item active">
                     <button class="faq-question">
-                        Comment accéder aux templates après l'achat ?
+                        Quels formats de visuels proposez-vous ?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Après votre achat, vous recevez immédiatement un email avec un lien vers un dossier contenant tous vos templates Canva. Il vous suffit de cliquer sur chaque template pour l'ajouter à votre compte Canva.</p>
+                        <p>Je crée des visuels pour toutes les plateformes : Facebook (fil, stories, ads), Instagram (posts, stories, reels), TikTok, LinkedIn, et plus. Formats carrés, verticaux et horizontaux disponibles.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        Ai-je besoin d'un compte Canva Pro ?
+                        Quel est le délai de livraison ?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Non, la plupart des templates fonctionnent avec un compte Canva gratuit. Certains éléments premium peuvent nécessiter Canva Pro, mais des alternatives gratuites sont toujours disponibles.</p>
+                        <p>Les visuels sont livrés sous 48h pour les packs Starter et Pro, et sous 72h pour le pack Business (car plus de visuels). Un délai express est possible sur demande.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        Puis-je utiliser les templates pour mes clients ?
+                        Comment se passent les révisions ?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Oui ! Avec le pack Agence, vous bénéficiez d'une licence commerciale qui vous permet d'utiliser les templates pour vos clients sans limite.</p>
+                        <p>Je vous envoie les visuels, vous me faites vos retours, et je modifie jusqu'à votre entière satisfaction. Les révisions sont illimitées sur les packs Pro et Business.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        Les templates sont-ils vraiment personnalisables ?
+                        Sous quel format recevrai-je mes visuels ?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Absolument ! Vous pouvez modifier les textes, couleurs, images, polices et tous les éléments. Chaque template est conçu pour être 100% adaptable à votre marque.</p>
+                        <p>Vous recevez vos visuels en haute définition (PNG ou JPG selon vos besoins). Les packs Pro et Business incluent aussi les fichiers sources si vous le souhaitez.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        Y a-t-il une garantie satisfait ou remboursé ?
+                        Puis-je avoir un devis personnalisé ?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Oui, nous offrons une garantie de 14 jours. Si les templates ne correspondent pas à vos attentes, contactez-nous pour un remboursement complet.</p>
+                        <p>Bien sûr ! Si vous avez des besoins spécifiques ou un volume important, contactez-moi et je vous ferai une offre adaptée à votre projet.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        Comment sont livrées les mises à jour ?
+                        Comment vous payer ?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Les nouveaux templates sont ajoutés directement au dossier partagé. Vous recevez également un email vous informant des nouvelles additions.</p>
+                        <p>Le paiement se fait par virement bancaire ou PayPal. 50% à la commande, 50% à la livraison pour les nouveaux clients. Paiement intégral pour les clients réguliers.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2>Prêt à lancer votre projet ?</h2>
+                <p>Contactez-moi et recevez vos visuels sous 48h</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-methods">
+                    <a href="https://wa.me/VOTRE_NUMERO" class="contact-method" target="_blank">
+                        <div class="contact-method-icon">💬</div>
+                        <div class="contact-method-info">
+                            <h4>WhatsApp</h4>
+                            <p>Réponse rapide</p>
+                        </div>
+                    </a>
+                    <a href="mailto:contact@pubkit.fr" class="contact-method">
+                        <div class="contact-method-icon">📧</div>
+                        <div class="contact-method-info">
+                            <h4>Email</h4>
+                            <p>contact@pubkit.fr</p>
+                        </div>
+                    </a>
+                    <a href="https://instagram.com/VOTRE_COMPTE" class="contact-method" target="_blank">
+                        <div class="contact-method-icon">📷</div>
+                        <div class="contact-method-info">
+                            <h4>Instagram</h4>
+                            <p>@pubkit</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1609,55 +1623,28 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="cta-content">
-            <h2>Prêt à booster vos publicités ?</h2>
-            <p>Rejoignez des centaines d'entrepreneurs qui créent déjà des visuels professionnels en quelques minutes.</p>
-            <a href="#pricing" class="btn">Accéder aux templates →</a>
+            <h2>Des visuels pro, sans prise de tête</h2>
+            <p>Concentrez-vous sur votre business, je m'occupe de vos créations publicitaires.</p>
+            <a href="#contact" class="btn">Me contacter →</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-brand">
-                <a href="#" class="logo">
-                    <div class="logo-icon">P</div>
-                    PubMaster
-                </a>
-                <p>La solution complète pour créer des publicités qui convertissent. 500+ templates premium à votre disposition.</p>
+            <a href="#" class="logo">
+                <div class="logo-icon">P</div>
+                PubKit
+            </a>
+            <p>Création de visuels publicitaires professionnels</p>
+            <div class="footer-links-inline">
+                <a href="#services">Services</a>
+                <a href="#portfolio">Réalisations</a>
+                <a href="#pricing">Tarifs</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
             </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#features">Avantages</a></li>
-                    <li><a href="#examples">Exemples</a></li>
-                    <li><a href="#pricing">Tarifs</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Légal</h4>
-                <ul>
-                    <li><a href="#">CGV</a></li>
-                    <li><a href="#">Politique de confidentialité</a></li>
-                    <li><a href="#">Mentions légales</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="mailto:contact@pubmaster.fr">contact@pubmaster.fr</a></li>
-                    <li><a href="#">WhatsApp</a></li>
-                    <li><a href="#">Instagram</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 PubMaster. Tous droits réservés.</p>
-            <div class="social-links">
-                <a href="#" aria-label="Instagram">📷</a>
-                <a href="#" aria-label="TikTok">🎵</a>
-                <a href="#" aria-label="Facebook">📘</a>
-            </div>
+            <p style="margin-top: 2rem;">© 2026 PubKit. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -1701,14 +1688,6 @@
                         block: 'start'
                     });
                 }
-            });
-        });
-
-        // Tab functionality for examples
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
             });
         });
     </script>
