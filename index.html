@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PubKit - Création de Visuels Publicitaires Professionnels</title>
-    <meta name="description" content="Je crée vos visuels publicitaires professionnels pour Facebook, Instagram et plus. Designs sur-mesure qui convertissent.">
+    <title>PubKit Studio - Agence de Création Publicitaire</title>
+    <meta name="description" content="Agence de création de visuels publicitaires professionnels. Facebook Ads, Instagram, E-commerce. Devis en 2 minutes.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #FF6B35;
-            --primary-dark: #E85A2A;
-            --secondary: #1A1A2E;
-            --accent: #16213E;
-            --light: #F8F9FA;
-            --gold: #F4A261;
-            --text: #2D3436;
-            --text-light: #636E72;
-            --gradient: linear-gradient(135deg, #FF6B35 0%, #F4A261 100%);
-            --shadow: 0 10px 40px rgba(26, 26, 46, 0.12);
-            --shadow-lg: 0 25px 60px rgba(26, 26, 46, 0.18);
+            --primary: #2D5A4A;
+            --primary-light: #3D7A64;
+            --secondary: #0D1B2A;
+            --accent: #D4A853;
+            --cream: #FAF8F5;
+            --white: #FFFFFF;
+            --text: #1B1B1B;
+            --text-light: #5A5A5A;
+            --border: #E8E4DF;
+            --shadow: 0 4px 24px rgba(13, 27, 42, 0.08);
+            --shadow-lg: 0 12px 48px rgba(13, 27, 42, 0.12);
         }
 
         * {
@@ -34,17 +34,22 @@
         }
 
         body {
-            font-family: 'Instrument Sans', sans-serif;
+            font-family: 'DM Sans', sans-serif;
             color: var(--text);
             line-height: 1.7;
-            background: var(--light);
-            overflow-x: hidden;
+            background: var(--cream);
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Fraunces', serif;
             font-weight: 700;
             line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         /* Navbar */
@@ -55,14 +60,9 @@
             right: 0;
             z-index: 1000;
             padding: 1rem 0;
-            transition: all 0.3s ease;
-            background: transparent;
-        }
-
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(250, 248, 245, 0.95);
             backdrop-filter: blur(20px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            border-bottom: 1px solid var(--border);
         }
 
         .nav-container {
@@ -75,69 +75,59 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
             color: var(--secondary);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient);
-            border-radius: 10px;
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
+            font-size: 1rem;
             font-weight: 700;
-            font-size: 1.2rem;
         }
 
         .nav-links {
             display: flex;
             gap: 2.5rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text);
+            color: var(--text-light);
             font-weight: 500;
             font-size: 0.95rem;
             transition: color 0.3s;
-            position: relative;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
         .nav-cta {
-            background: var(--gradient);
+            background: var(--secondary);
             color: white !important;
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
             font-weight: 600;
+            transition: all 0.3s;
         }
 
-        .nav-cta::after {
-            display: none !important;
+        .nav-cta:hover {
+            background: var(--primary);
         }
 
         .mobile-menu-btn {
@@ -150,138 +140,90 @@
 
         .mobile-menu-btn span {
             display: block;
-            width: 25px;
-            height: 3px;
+            width: 24px;
+            height: 2px;
             background: var(--secondary);
             margin: 5px 0;
-            border-radius: 3px;
-            transition: 0.3s;
+            border-radius: 2px;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+            padding: 10rem 0 6rem;
+            background: var(--cream);
             position: relative;
-            display: flex;
-            align-items: center;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-
-        .hero-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
-            top: -200px;
-            right: -200px;
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        .hero-glow-2 {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(244, 162, 97, 0.1) 0%, transparent 70%);
-            bottom: -100px;
-            left: -100px;
-            animation: pulse 6s ease-in-out infinite reverse;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 8rem 2rem 4rem;
+        .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
         .hero-content {
-            animation: fadeInUp 1s ease;
+            animation: fadeIn 1s ease;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero-badge {
+        .hero-tag {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(255, 107, 53, 0.15);
-            border: 1px solid rgba(255, 107, 53, 0.3);
-            color: var(--gold);
+            background: var(--white);
+            border: 1px solid var(--border);
             padding: 0.5rem 1rem;
-            border-radius: 50px;
+            border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 600;
+            color: var(--primary);
             margin-bottom: 1.5rem;
         }
 
-        .hero-badge::before {
-            content: '🎨';
+        .hero-tag::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            color: white;
+            font-size: 3.8rem;
+            color: var(--secondary);
             margin-bottom: 1.5rem;
-            line-height: 1.15;
+            letter-spacing: -0.02em;
         }
 
         .hero h1 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary);
         }
 
         .hero-text {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            color: var(--text-light);
             margin-bottom: 2.5rem;
-            max-width: 500px;
+            max-width: 480px;
+            line-height: 1.8;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
             padding: 1rem 2rem;
-            border-radius: 50px;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 1rem;
             text-decoration: none;
@@ -292,164 +234,129 @@
         }
 
         .btn-primary {
-            background: var(--gradient);
+            background: var(--secondary);
             color: white;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+            background: var(--primary);
+            transform: translateY(-2px);
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .btn-outline {
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--border);
         }
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 2.5rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat {
-            text-align: left;
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
+        .btn-outline:hover {
+            border-color: var(--secondary);
         }
 
         .hero-visual {
             position: relative;
-            animation: fadeInUp 1s ease 0.3s both;
+            animation: fadeIn 1s ease 0.2s both;
         }
 
-        .templates-showcase {
-            position: relative;
-            height: 500px;
+        .hero-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
 
-        .template-card {
-            position: absolute;
-            background: white;
+        .hero-card {
+            background: var(--white);
             border-radius: 16px;
-            box-shadow: var(--shadow-lg);
             overflow: hidden;
-            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
         }
 
-        .template-card:hover {
-            transform: scale(1.05) rotate(0deg) !important;
-            z-index: 10;
+        .hero-card:hover {
+            transform: translateY(-5px);
         }
 
-        .template-card img {
-            width: 100%;
+        .hero-card:first-child {
+            grid-row: span 2;
+        }
+
+        .hero-card-content {
             height: 100%;
-            object-fit: cover;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
         }
 
-        .template-1 {
-            width: 200px;
-            height: 250px;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%) rotate(-5deg);
-            z-index: 3;
+        .hero-card-content.style-1 {
+            background: linear-gradient(135deg, #2D5A4A 0%, #1a3a2e 100%);
+            color: white;
+            min-height: 380px;
         }
 
-        .template-2 {
-            width: 180px;
-            height: 220px;
-            top: 80px;
-            left: 10%;
-            transform: rotate(8deg);
-            z-index: 2;
+        .hero-card-content.style-2 {
+            background: linear-gradient(135deg, #D4A853 0%, #b8923f 100%);
+            color: white;
         }
 
-        .template-3 {
-            width: 180px;
-            height: 220px;
-            top: 80px;
-            right: 10%;
-            transform: rotate(-8deg);
-            z-index: 2;
+        .hero-card-content.style-3 {
+            background: linear-gradient(135deg, #0D1B2A 0%, #1a2d42 100%);
+            color: white;
         }
 
-        .template-4 {
-            width: 160px;
-            height: 200px;
-            bottom: 40px;
-            left: 25%;
-            transform: rotate(5deg);
-            z-index: 1;
+        .hero-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
-        .template-5 {
-            width: 160px;
-            height: 200px;
-            bottom: 40px;
-            right: 25%;
-            transform: rotate(-5deg);
-            z-index: 1;
+        .hero-card-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
         }
 
-        .template-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Trust Bar */
+        .trust-bar {
+            padding: 3rem 0;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--cream);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 1rem;
+            font-size: 1.2rem;
         }
 
-        .template-placeholder.style-2 {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-
-        .template-placeholder.style-3 {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-
-        .template-placeholder.style-4 {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        }
-
-        .template-placeholder.style-5 {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 6rem 2rem;
-            background: white;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Services */
+        .services {
+            padding: 6rem 0;
+            background: var(--white);
         }
 
         .section-header {
@@ -460,13 +367,14 @@
 
         .section-tag {
             display: inline-block;
-            background: rgba(255, 107, 53, 0.1);
+            background: var(--cream);
             color: var(--primary);
             padding: 0.4rem 1rem;
-            border-radius: 50px;
+            border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1rem;
+            border: 1px solid var(--border);
         }
 
         .section-header h2 {
@@ -480,72 +388,359 @@
             font-size: 1.1rem;
         }
 
-        .features-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
-        .feature-card {
-            background: var(--light);
-            padding: 2.5rem;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        .service-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
+        .service-card:hover {
+            border-color: var(--primary);
             transform: translateY(-5px);
             box-shadow: var(--shadow);
         }
 
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient);
-            border-radius: 16px;
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--white);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
         }
 
-        .feature-card h3 {
-            font-family: 'Instrument Sans', sans-serif;
-            font-size: 1.25rem;
+        .service-card h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.75rem;
             color: var(--secondary);
         }
 
-        .feature-card p {
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            padding: 6rem 0;
+            background: var(--cream);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        .portfolio-item {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-bg {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(13, 27, 42, 0.85);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 1rem;
+        }
+
+        .portfolio-overlay h4 {
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .portfolio-overlay p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+        }
+
+        .portfolio-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .portfolio-note p {
             color: var(--text-light);
             font-size: 0.95rem;
         }
 
-        /* Process Section */
+        /* Pricing & Order Form */
+        .pricing {
+            padding: 6rem 0;
+            background: var(--secondary);
+        }
+
+        .pricing .section-header h2,
+        .pricing .section-header p {
+            color: white;
+        }
+
+        .pricing .section-tag {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.2);
+            color: var(--accent);
+        }
+
+        .order-container {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .order-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+        .order-packs {
+            padding: 3rem;
+            background: var(--cream);
+            border-right: 1px solid var(--border);
+        }
+
+        .order-packs h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .order-packs > p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .pack-option {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pack-option:hover {
+            border-color: var(--primary);
+        }
+
+        .pack-option.selected {
+            border-color: var(--primary);
+            background: rgba(45, 90, 74, 0.05);
+        }
+
+        .pack-option.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .pack-popular {
+            position: absolute;
+            top: -10px;
+            left: 1.5rem;
+            background: var(--accent);
+            color: var(--secondary);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+        }
+
+        .pack-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .pack-name {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--secondary);
+        }
+
+        .pack-price {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .pack-features {
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .pack-features li {
+            padding: 0.3rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pack-features li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .order-form {
+            padding: 3rem;
+        }
+
+        .order-form h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .order-form > p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .form-submit {
+            margin-top: 2rem;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            padding: 1.1rem;
+            font-size: 1.05rem;
+        }
+
+        .form-secure {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Process */
         .process {
-            padding: 6rem 2rem;
-            background: var(--light);
+            padding: 6rem 0;
+            background: var(--white);
         }
 
         .process-grid {
@@ -560,12 +755,13 @@
         }
 
         .process-step::after {
-            content: '→';
+            content: '';
             position: absolute;
+            top: 35px;
             right: -1rem;
-            top: 40px;
-            font-size: 1.5rem;
-            color: var(--primary);
+            width: calc(100% - 70px);
+            height: 2px;
+            background: var(--border);
         }
 
         .process-step:last-child::after {
@@ -573,23 +769,26 @@
         }
 
         .process-number {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient);
+            width: 70px;
+            height: 70px;
+            background: var(--cream);
+            border: 2px solid var(--border);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: white;
-            margin: 0 auto 1.5rem;
+            color: var(--primary);
+            margin: 0 auto 1.25rem;
+            position: relative;
+            z-index: 1;
         }
 
         .process-step h3 {
-            font-family: 'Instrument Sans', sans-serif;
-            font-size: 1.1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: var(--secondary);
@@ -600,266 +799,28 @@
             font-size: 0.9rem;
         }
 
-        /* Examples Section */
-        .examples {
-            padding: 6rem 2rem;
-            background: white;
-        }
-
-        .examples-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        .example-card {
-            aspect-ratio: 1;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .example-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .example-card .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(26, 26, 46, 0.9) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            display: flex;
-            align-items: flex-end;
-            padding: 1.5rem;
-        }
-
-        .example-card:hover .overlay {
-            opacity: 1;
-        }
-
-        .overlay-content {
-            color: white;
-        }
-
-        .overlay-content h4 {
-            font-family: 'Instrument Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .overlay-content p {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-
-        .example-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: white;
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .examples-note {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            background: var(--light);
-            border-radius: 16px;
-        }
-
-        .examples-note p {
-            color: var(--text-light);
-            font-size: 1rem;
-        }
-
-        .examples-note strong {
-            color: var(--primary);
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 6rem 2rem;
-            background: var(--secondary);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        .pricing .section-header h2,
-        .pricing .section-header p {
-            color: white;
-        }
-
-        .pricing .section-header p {
-            opacity: 0.7;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .pricing-card {
-            background: white;
-            border-radius: 24px;
-            padding: 2.5rem;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .pricing-card.featured {
-            background: var(--gradient);
-            transform: scale(1.05);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .pricing-card.featured * {
-            color: white;
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gold);
-            color: var(--secondary) !important;
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .pricing-card.featured .pricing-header {
-            border-bottom-color: rgba(255,255,255,0.2);
-        }
-
-        .pricing-name {
-            font-family: 'Instrument Sans', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-price {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .pricing-price span {
-            font-size: 1rem;
-            font-weight: 400;
-            opacity: 0.6;
-        }
-
-        .pricing-desc {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-top: 0.5rem;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .pricing-features li {
-            padding: 0.7rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 0.95rem;
-        }
-
-        .pricing-features li::before {
-            content: '✓';
-            width: 24px;
-            height: 24px;
-            background: rgba(255, 107, 53, 0.1);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .pricing-card.featured .pricing-features li::before {
-            background: rgba(255,255,255,0.2);
-            color: white;
-        }
-
-        .pricing-card .btn {
-            width: 100%;
-            justify-content: center;
-        }
-
-        .pricing-card.featured .btn {
-            background: white;
-            color: var(--primary);
-        }
-
-        /* FAQ Section */
+        /* FAQ */
         .faq {
-            padding: 6rem 2rem;
-            background: white;
+            padding: 6rem 0;
+            background: var(--cream);
         }
 
         .faq-grid {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
         .faq-item {
-            border-bottom: 1px solid #eee;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
         }
 
         .faq-question {
             width: 100%;
-            padding: 1.5rem 0;
+            padding: 1.25rem 1.5rem;
             background: none;
             border: none;
             display: flex;
@@ -868,7 +829,7 @@
             cursor: pointer;
             text-align: left;
             font-family: inherit;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--secondary);
             transition: color 0.3s;
@@ -879,9 +840,9 @@
         }
 
         .faq-icon {
-            width: 32px;
-            height: 32px;
-            background: var(--light);
+            width: 28px;
+            height: 28px;
+            background: var(--cream);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -889,6 +850,7 @@
             font-size: 1.2rem;
             transition: all 0.3s;
             flex-shrink: 0;
+            color: var(--text-light);
         }
 
         .faq-item.active .faq-icon {
@@ -905,193 +867,191 @@
 
         .faq-item.active .faq-answer {
             max-height: 200px;
-            padding-bottom: 1.5rem;
         }
 
         .faq-answer p {
+            padding: 0 1.5rem 1.25rem;
             color: var(--text-light);
             line-height: 1.8;
+            font-size: 0.95rem;
         }
 
-        /* CTA Section */
-        .cta {
-            padding: 6rem 2rem;
-            background: var(--gradient);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        /* Contact */
+        .contact {
+            padding: 6rem 0;
+            background: var(--white);
         }
 
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
-            animation: rotate 20s linear infinite;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta h2 {
-            font-size: 2.8rem;
-            color: white;
+        .contact-info h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
             margin-bottom: 1rem;
         }
 
-        .cta p {
-            color: rgba(255,255,255,0.9);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta .btn {
-            background: white;
-            color: var(--primary);
+        .contact-info p {
+            color: var(--text-light);
             font-size: 1.1rem;
-            padding: 1.2rem 2.5rem;
-        }
-
-        .cta .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 6rem 2rem;
-            background: var(--light);
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
+            margin-bottom: 2rem;
         }
 
         .contact-methods {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .contact-method {
             display: flex;
             align-items: center;
             gap: 1rem;
-            padding: 1.5rem 2rem;
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--shadow);
+            padding: 1.25rem;
+            background: var(--cream);
+            border-radius: 12px;
             text-decoration: none;
             color: var(--text);
             transition: all 0.3s;
+            border: 1px solid var(--border);
         }
 
         .contact-method:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+            transform: translateX(5px);
         }
 
         .contact-method-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient);
-            border-radius: 12px;
+            width: 48px;
+            height: 48px;
+            background: var(--white);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
-        .contact-method-info h4 {
-            font-family: 'Instrument Sans', sans-serif;
+        .contact-method-text h4 {
+            font-family: 'DM Sans', sans-serif;
             font-size: 1rem;
             font-weight: 700;
             color: var(--secondary);
         }
 
-        .contact-method-info p {
+        .contact-method-text p {
             font-size: 0.9rem;
             color: var(--text-light);
+            margin: 0;
+        }
+
+        .contact-image {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .contact-image-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-image h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-image p {
+            color: var(--text-light);
+            margin: 0;
         }
 
         /* Footer */
         .footer {
             background: var(--secondary);
             color: white;
-            padding: 3rem 2rem;
-            text-align: center;
+            padding: 4rem 0 2rem;
         }
 
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
 
-        .footer .logo {
+        .footer-brand .logo {
             color: white;
-            justify-content: center;
             margin-bottom: 1rem;
         }
 
-        .footer p {
+        .footer-brand .logo-mark {
+            background: var(--primary);
+        }
+
+        .footer-brand p {
             color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            max-width: 280px;
+        }
+
+        .footer-links h4 {
+            font-family: 'DM Sans', sans-serif;
             font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: white;
         }
 
-        .footer-links-inline {
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+        .footer-links ul {
+            list-style: none;
         }
 
-        .footer-links-inline a {
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
 
-        .footer-links-inline a:hover {
-            color: var(--primary);
+        .footer-links a:hover {
+            color: var(--accent);
         }
 
-        /* Mobile Responsive */
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Mobile */
         @media (max-width: 1024px) {
-            .hero-container {
+            .hero-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
 
-            .hero-content {
-                order: 1;
-            }
-
-            .hero-visual {
-                order: 0;
-                height: 400px;
-            }
-
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
 
             .hero-text {
@@ -1103,12 +1063,26 @@
                 justify-content: center;
             }
 
-            .hero-stats {
-                justify-content: center;
+            .hero-visual {
+                max-width: 500px;
+                margin: 0 auto;
             }
 
-            .features-grid {
+            .services-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .order-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .order-packs {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
             }
 
             .process-grid {
@@ -1120,19 +1094,12 @@
                 display: none;
             }
 
-            .examples-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .pricing-grid {
+            .contact-grid {
                 grid-template-columns: 1fr;
-                max-width: 400px;
-                margin-left: auto;
-                margin-right: auto;
             }
 
-            .pricing-card.featured {
-                transform: none;
+            .contact-image {
+                order: -1;
             }
         }
 
@@ -1145,78 +1112,78 @@
                 display: block;
             }
 
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+
             .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-stats {
-                gap: 1.5rem;
-            }
-
-            .stat-number {
-                font-size: 1.8rem;
+                font-size: 2.3rem;
             }
 
             .section-header h2 {
                 font-size: 2rem;
             }
 
-            .features-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .process-grid {
                 grid-template-columns: 1fr;
             }
 
-            .examples-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .form-row {
+                grid-template-columns: 1fr;
             }
 
-            .templates-showcase {
-                height: 350px;
+            .trust-content {
+                gap: 2rem;
             }
 
-            .template-1 {
-                width: 150px;
-                height: 190px;
-            }
-
-            .template-2, .template-3 {
-                width: 130px;
-                height: 170px;
-            }
-
-            .template-4, .template-5 {
-                width: 120px;
-                height: 150px;
-            }
-
-            .cta h2 {
-                font-size: 2rem;
-            }
-
-            .contact-methods {
+            .footer-content {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
+            }
+
+            .footer-brand p {
+                margin: 0 auto;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
             }
         }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-card:nth-child(1) { animation: float 6s ease-in-out infinite; }
+        .hero-card:nth-child(2) { animation: float 6s ease-in-out infinite 0.5s; }
+        .hero-card:nth-child(3) { animation: float 6s ease-in-out infinite 1s; }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <div class="logo-icon">P</div>
-                PubKit
+                <div class="logo-mark">PK</div>
+                PubKit Studio
             </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Réalisations</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#pricing">Tarifs</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+                <li><a href="#pricing" class="nav-cta">Commander</a></li>
             </ul>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
@@ -1226,298 +1193,340 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="hero-glow"></div>
-        <div class="hero-glow-2"></div>
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">Création sur-mesure</div>
-                <h1>Je crée vos <span>Visuels Publicitaires</span> qui convertissent</h1>
-                <p class="hero-text">Confiez-moi la création de vos publicités Facebook, Instagram, Stories et plus. Des designs professionnels livrés rapidement, prêts à performer.</p>
-                <div class="hero-buttons">
-                    <a href="#pricing" class="btn btn-primary">Voir les tarifs →</a>
-                    <a href="#portfolio" class="btn btn-secondary">Mes réalisations</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">48h</div>
-                        <div class="stat-label">Livraison rapide</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Sur-mesure</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">∞</div>
-                        <div class="stat-label">Révisions</div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-tag">Agence de création publicitaire</div>
+                    <h1>Des visuels qui <span>convertissent</span>, créés pour vous</h1>
+                    <p class="hero-text">Je conçois vos publicités Facebook, Instagram et e-commerce. Des designs professionnels, livrés sous 48h, adaptés à votre marque.</p>
+                    <div class="hero-buttons">
+                        <a href="#pricing" class="btn btn-primary">Commander maintenant</a>
+                        <a href="#portfolio" class="btn btn-outline">Voir mes créations</a>
                     </div>
                 </div>
-            </div>
-            <div class="hero-visual">
-                <div class="templates-showcase">
-                    <div class="template-card template-1">
-                        <div class="template-placeholder">🛍️ E-commerce</div>
-                    </div>
-                    <div class="template-card template-2">
-                        <div class="template-placeholder style-2">📱 Social Media</div>
-                    </div>
-                    <div class="template-card template-3">
-                        <div class="template-placeholder style-3">🎯 Facebook Ads</div>
-                    </div>
-                    <div class="template-card template-4">
-                        <div class="template-placeholder style-4">📧 Email</div>
-                    </div>
-                    <div class="template-card template-5">
-                        <div class="template-placeholder style-5">🎨 Stories</div>
+                <div class="hero-visual">
+                    <div class="hero-image-grid">
+                        <div class="hero-card">
+                            <div class="hero-card-content style-1">
+                                <div class="hero-card-icon">🎯</div>
+                                <div class="hero-card-title">Facebook Ads</div>
+                            </div>
+                        </div>
+                        <div class="hero-card">
+                            <div class="hero-card-content style-2">
+                                <div class="hero-card-icon">📱</div>
+                                <div class="hero-card-title">Instagram</div>
+                            </div>
+                        </div>
+                        <div class="hero-card">
+                            <div class="hero-card-content style-3">
+                                <div class="hero-card-icon">🛒</div>
+                                <div class="hero-card-title">E-commerce</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="services">
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-content">
+                <div class="trust-item">
+                    <div class="trust-icon">⚡</div>
+                    <span>Livraison sous 48h</span>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🔄</div>
+                    <span>Révisions illimitées</span>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💬</div>
+                    <span>Support WhatsApp</span>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">✨</div>
+                    <span>100% sur-mesure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Mes services</span>
-                <h2>Des visuels pour tous vos besoins</h2>
-                <p>Je crée des designs adaptés à chaque plateforme et objectif</p>
+                <span class="section-tag">Services</span>
+                <h2>Ce que je peux créer pour vous</h2>
+                <p>Des visuels adaptés à chaque plateforme et objectif</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Facebook & Instagram Ads</h3>
-                    <p>Publicités optimisées pour le fil d'actualité, stories et reels. Formats carrés, verticaux et horizontaux.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Facebook Ads</h3>
+                    <p>Publicités optimisées pour le fil d'actualité. Formats adaptés pour maximiser vos clics et conversions.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛒</div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Instagram Posts & Stories</h3>
+                    <p>Contenus visuels captivants pour votre feed et vos stories. Designs qui arrêtent le scroll.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
                     <h3>E-commerce</h3>
-                    <p>Visuels produits, bannières promotionnelles, carrousels. Parfait pour booster vos ventes en ligne.</p>
+                    <p>Visuels produits, bannières promo, carrousels. Parfait pour booster vos ventes en ligne.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📖</div>
-                    <h3>Stories & Reels</h3>
-                    <p>Contenus verticaux captivants pour Instagram, Facebook et TikTok. Animations possibles.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
+                <div class="service-card">
+                    <div class="service-icon">📚</div>
                     <h3>Carrousels</h3>
-                    <p>Séquences de visuels pour raconter une histoire ou présenter plusieurs produits/services.</p>
+                    <p>Séquences de visuels pour raconter une histoire ou présenter plusieurs produits.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💼</div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
                     <h3>Coaching & Formation</h3>
-                    <p>Visuels pour vos lancements, webinaires, programmes. Design qui inspire confiance.</p>
+                    <p>Visuels pour vos lancements, webinaires et programmes. Design qui inspire confiance.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🍔</div>
-                    <h3>Restauration & Local</h3>
+                <div class="service-card">
+                    <div class="service-icon">🍔</div>
+                    <h3>Local & Restauration</h3>
                     <p>Menus, promos, événements. Visuels appétissants pour attirer des clients locaux.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Comment ça marche</span>
-                <h2>Un processus simple et rapide</h2>
-                <p>De votre idée à vos visuels en 4 étapes</p>
-            </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="process-number">1</div>
-                    <h3>Vous me contactez</h3>
-                    <p>Décrivez votre projet et vos besoins</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">2</div>
-                    <h3>Je vous conseille</h3>
-                    <p>On définit ensemble le meilleur format</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">3</div>
-                    <h3>Je crée vos visuels</h3>
-                    <p>Designs sur-mesure sous 48h</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">4</div>
-                    <h3>Vous validez</h3>
-                    <p>Révisions illimitées jusqu'à satisfaction</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Examples Section -->
-    <section class="examples" id="portfolio">
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Portfolio</span>
                 <h2>Exemples de réalisations</h2>
-                <p>Quelques visuels créés pour mes clients</p>
+                <p>Quelques visuels créés pour des clients</p>
             </div>
-            <div class="examples-grid">
-                <div class="example-card">
-                    <div class="example-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        🛒<br>Promo E-commerce
-                    </div>
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <h4>Promo E-commerce</h4>
-                            <p>Facebook Ads</p>
-                        </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #2D5A4A 0%, #1a3a2e 100%);">🛍️</div>
+                    <div class="portfolio-overlay">
+                        <h4>Promo E-commerce</h4>
+                        <p>Facebook Ads</p>
                     </div>
                 </div>
-                <div class="example-card">
-                    <div class="example-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        💄<br>Beauté
-                    </div>
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <h4>Collection Beauté</h4>
-                            <p>Instagram Post</p>
-                        </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #D4A853 0%, #b8923f 100%);">💄</div>
+                    <div class="portfolio-overlay">
+                        <h4>Collection Beauté</h4>
+                        <p>Instagram Post</p>
                     </div>
                 </div>
-                <div class="example-card">
-                    <div class="example-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        🏋️<br>Fitness
-                    </div>
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <h4>Programme Fitness</h4>
-                            <p>Story Instagram</p>
-                        </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #0D1B2A 0%, #1a2d42 100%);">🏋️</div>
+                    <div class="portfolio-overlay">
+                        <h4>Programme Fitness</h4>
+                        <p>Story Instagram</p>
                     </div>
                 </div>
-                <div class="example-card">
-                    <div class="example-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                        🍔<br>Restaurant
-                    </div>
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <h4>Menu Restaurant</h4>
-                            <p>Facebook Ads</p>
-                        </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #E07A5F 0%, #c4684f 100%);">🍔</div>
+                    <div class="portfolio-overlay">
+                        <h4>Menu Restaurant</h4>
+                        <p>Facebook Ads</p>
                     </div>
                 </div>
-                <div class="example-card">
-                    <div class="example-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        🏠<br>Immobilier
-                    </div>
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <h4>Annonce Immo</h4>
-                            <p>Carrousel</p>
-                        </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #81B29A 0%, #6a9a82 100%);">🏠</div>
+                    <div class="portfolio-overlay">
+                        <h4>Annonce Immo</h4>
+                        <p>Carrousel</p>
                     </div>
                 </div>
-                <div class="example-card">
-                    <div class="example-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333;">
-                        📚<br>Formation
-                    </div>
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <h4>Cours en ligne</h4>
-                            <p>Facebook Ads</p>
-                        </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #F2CC8F 0%, #d9b67a 100%);">📚</div>
+                    <div class="portfolio-overlay">
+                        <h4>Formation en ligne</h4>
+                        <p>Facebook Ads</p>
                     </div>
                 </div>
-                <div class="example-card">
-                    <div class="example-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333;">
-                        ✈️<br>Voyage
-                    </div>
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <h4>Offre Voyage</h4>
-                            <p>Story Instagram</p>
-                        </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #3D405B 0%, #2d2f44 100%);">✈️</div>
+                    <div class="portfolio-overlay">
+                        <h4>Agence Voyage</h4>
+                        <p>Story Instagram</p>
                     </div>
                 </div>
-                <div class="example-card">
-                    <div class="example-placeholder" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); color: #333;">
-                        💼<br>Coaching
-                    </div>
-                    <div class="overlay">
-                        <div class="overlay-content">
-                            <h4>Programme Coaching</h4>
-                            <p>Carrousel</p>
-                        </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #BC6C25 0%, #9a5a1f 100%);">💼</div>
+                    <div class="portfolio-overlay">
+                        <h4>Coaching Business</h4>
+                        <p>Carrousel</p>
                     </div>
                 </div>
             </div>
-            <div class="examples-note">
-                <p>💡 <strong>Ces visuels sont des exemples.</strong> Chaque création est unique et adaptée à votre marque et vos objectifs.</p>
+            <div class="portfolio-note">
+                <p>✨ Chaque création est unique et personnalisée selon votre marque, vos couleurs et vos objectifs.</p>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- Pricing & Order -->
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--gold);">Tarifs</span>
-                <h2>Des offres adaptées à vos besoins</h2>
-                <p>Choisissez le pack qui vous convient</p>
+                <span class="section-tag">Commander</span>
+                <h2>Choisissez votre pack et lancez votre projet</h2>
+                <p>Sélectionnez une offre puis remplissez le formulaire</p>
             </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <div class="pricing-name">Starter</div>
-                        <div class="pricing-price">29€</div>
-                        <div class="pricing-desc">Idéal pour tester</div>
+            <div class="order-container">
+                <div class="order-grid">
+                    <div class="order-packs">
+                        <h3>1. Choisissez votre pack</h3>
+                        <p>Cliquez sur l'offre qui correspond à vos besoins</p>
+                        
+                        <div class="pack-option" data-pack="starter" data-price="29">
+                            <div class="pack-header">
+                                <div class="pack-name">Starter</div>
+                                <div class="pack-price">29€</div>
+                            </div>
+                            <ul class="pack-features">
+                                <li>3 visuels publicitaires</li>
+                                <li>1 format au choix</li>
+                                <li>Livraison 48h</li>
+                                <li>2 révisions incluses</li>
+                            </ul>
+                        </div>
+
+                        <div class="pack-option selected" data-pack="pro" data-price="69">
+                            <div class="pack-popular">POPULAIRE</div>
+                            <div class="pack-header">
+                                <div class="pack-name">Pro</div>
+                                <div class="pack-price">69€</div>
+                            </div>
+                            <ul class="pack-features">
+                                <li>8 visuels publicitaires</li>
+                                <li>Tous formats inclus</li>
+                                <li>Livraison 48h</li>
+                                <li>Révisions illimitées</li>
+                            </ul>
+                        </div>
+
+                        <div class="pack-option" data-pack="business" data-price="149">
+                            <div class="pack-header">
+                                <div class="pack-name">Business</div>
+                                <div class="pack-price">149€</div>
+                            </div>
+                            <ul class="pack-features">
+                                <li>20 visuels publicitaires</li>
+                                <li>Tous formats inclus</li>
+                                <li>Livraison 72h</li>
+                                <li>Révisions illimitées</li>
+                                <li>Support prioritaire</li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="pricing-features">
-                        <li>3 visuels publicitaires</li>
-                        <li>1 format au choix</li>
-                        <li>Livraison 48h</li>
-                        <li>2 révisions incluses</li>
-                        <li>Fichiers HD (PNG/JPG)</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary" style="background: var(--light); color: var(--text);">Choisir Starter</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">⭐ Populaire</div>
-                    <div class="pricing-header">
-                        <div class="pricing-name">Pro</div>
-                        <div class="pricing-price">69€</div>
-                        <div class="pricing-desc">Le plus demandé</div>
+
+                    <div class="order-form">
+                        <h3>2. Décrivez votre projet</h3>
+                        <p>Ces informations m'aideront à créer vos visuels</p>
+                        
+                        <form id="orderForm" action="https://formsubmit.co/VOTRE_EMAIL" method="POST">
+                            <input type="hidden" name="pack" id="selectedPack" value="pro">
+                            <input type="hidden" name="prix" id="selectedPrice" value="69€">
+                            <input type="hidden" name="_subject" value="Nouvelle commande PubKit">
+                            <input type="hidden" name="_captcha" value="false">
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Votre nom *</label>
+                                    <input type="text" id="name" name="name" required placeholder="Mohammed">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required placeholder="vous@email.com">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">WhatsApp / Téléphone *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+33 6 12 34 56 78">
+                                </div>
+                                <div class="form-group">
+                                    <label for="business">Votre activité *</label>
+                                    <input type="text" id="business" name="business" required placeholder="E-commerce, Coaching...">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="platform">Pour quelle(s) plateforme(s) ? *</label>
+                                <select id="platform" name="platform" required>
+                                    <option value="">Sélectionnez...</option>
+                                    <option value="facebook">Facebook Ads</option>
+                                    <option value="instagram">Instagram (Posts/Stories)</option>
+                                    <option value="facebook-instagram">Facebook + Instagram</option>
+                                    <option value="ecommerce">E-commerce</option>
+                                    <option value="autre">Autre (précisez ci-dessous)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Décrivez votre projet *</label>
+                                <textarea id="description" name="description" required placeholder="Décrivez ce que vous vendez, le message à communiquer, les couleurs de votre marque, et tout autre détail utile..."></textarea>
+                                <p class="form-note">Plus vous êtes précis, plus vos visuels seront adaptés à vos besoins.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="examples">Avez-vous des exemples de visuels que vous aimez ? (optionnel)</label>
+                                <input type="text" id="examples" name="examples" placeholder="Lien vers des images qui vous inspirent">
+                            </div>
+
+                            <div class="form-submit">
+                                <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+                                <p class="form-secure">🔒 Vos informations restent confidentielles</p>
+                            </div>
+                        </form>
                     </div>
-                    <ul class="pricing-features">
-                        <li>8 visuels publicitaires</li>
-                        <li>Tous formats inclus</li>
-                        <li>Livraison 48h</li>
-                        <li>Révisions illimitées</li>
-                        <li>Fichiers HD + sources</li>
-                        <li>Conseils personnalisés</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Choisir Pro</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <div class="pricing-name">Business</div>
-                        <div class="pricing-price">149€</div>
-                        <div class="pricing-desc">Pour les pros</div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>20 visuels publicitaires</li>
-                        <li>Tous formats inclus</li>
-                        <li>Livraison 72h</li>
-                        <li>Révisions illimitées</li>
-                        <li>Fichiers HD + sources</li>
-                        <li>Support prioritaire WhatsApp</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-secondary" style="background: var(--light); color: var(--text);">Choisir Business</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Processus</span>
+                <h2>Comment ça fonctionne</h2>
+                <p>4 étapes simples pour obtenir vos visuels</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Vous commandez</h3>
+                    <p>Choisissez votre pack et décrivez votre projet</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Je vous contacte</h3>
+                    <p>On échange par WhatsApp pour affiner vos besoins</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Je crée</h3>
+                    <p>Vos visuels sont prêts sous 48h</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Vous validez</h3>
+                    <p>Révisions jusqu'à satisfaction totale</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
             <div class="section-header">
@@ -1526,13 +1535,13 @@
                 <p>Tout ce que vous devez savoir</p>
             </div>
             <div class="faq-grid">
-                <div class="faq-item active">
+                <div class="faq-item">
                     <button class="faq-question">
-                        Quels formats de visuels proposez-vous ?
+                        Comment se passe le paiement ?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Je crée des visuels pour toutes les plateformes : Facebook (fil, stories, ads), Instagram (posts, stories, reels), TikTok, LinkedIn, et plus. Formats carrés, verticaux et horizontaux disponibles.</p>
+                        <p>Le paiement se fait par virement bancaire ou PayPal après validation du devis. Pour les nouveaux clients : 50% à la commande, 50% à la livraison.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1541,25 +1550,25 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Les visuels sont livrés sous 48h pour les packs Starter et Pro, et sous 72h pour le pack Business (car plus de visuels). Un délai express est possible sur demande.</p>
+                        <p>Les visuels sont livrés sous 48h pour les packs Starter et Pro, et sous 72h pour le pack Business. Livraison express possible sur demande.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        Comment se passent les révisions ?
+                        Comment fonctionnent les révisions ?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Je vous envoie les visuels, vous me faites vos retours, et je modifie jusqu'à votre entière satisfaction. Les révisions sont illimitées sur les packs Pro et Business.</p>
+                        <p>Je vous envoie les visuels, vous me donnez vos retours, et je modifie jusqu'à votre entière satisfaction. Les révisions sont illimitées sur les packs Pro et Business.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        Sous quel format recevrai-je mes visuels ?
+                        Sous quel format sont livrés les visuels ?
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Vous recevez vos visuels en haute définition (PNG ou JPG selon vos besoins). Les packs Pro et Business incluent aussi les fichiers sources si vous le souhaitez.</p>
+                        <p>Vous recevez vos visuels en haute définition (PNG ou JPG). Les fichiers sont prêts à être utilisés directement sur vos plateformes publicitaires.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1571,92 +1580,95 @@
                         <p>Bien sûr ! Si vous avez des besoins spécifiques ou un volume important, contactez-moi et je vous ferai une offre adaptée à votre projet.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Comment vous payer ?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Le paiement se fait par virement bancaire ou PayPal. 50% à la commande, 50% à la livraison pour les nouveaux clients. Paiement intégral pour les clients réguliers.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Contact</span>
-                <h2>Prêt à lancer votre projet ?</h2>
-                <p>Contactez-moi et recevez vos visuels sous 48h</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-methods">
-                    <a href="https://wa.me/VOTRE_NUMERO" class="contact-method" target="_blank">
-                        <div class="contact-method-icon">💬</div>
-                        <div class="contact-method-info">
-                            <h4>WhatsApp</h4>
-                            <p>Réponse rapide</p>
-                        </div>
-                    </a>
-                    <a href="mailto:contact@pubkit.fr" class="contact-method">
-                        <div class="contact-method-icon">📧</div>
-                        <div class="contact-method-info">
-                            <h4>Email</h4>
-                            <p>contact@pubkit.fr</p>
-                        </div>
-                    </a>
-                    <a href="https://instagram.com/VOTRE_COMPTE" class="contact-method" target="_blank">
-                        <div class="contact-method-icon">📷</div>
-                        <div class="contact-method-info">
-                            <h4>Instagram</h4>
-                            <p>@pubkit</p>
-                        </div>
-                    </a>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Une question ? Un projet sur-mesure ?</h2>
+                    <p>N'hésitez pas à me contacter, je réponds généralement dans l'heure.</p>
+                    <div class="contact-methods">
+                        <a href="https://wa.me/VOTRE_NUMERO" class="contact-method" target="_blank">
+                            <div class="contact-method-icon">💬</div>
+                            <div class="contact-method-text">
+                                <h4>WhatsApp</h4>
+                                <p>Réponse rapide garantie</p>
+                            </div>
+                        </a>
+                        <a href="mailto:contact@pubkit.fr" class="contact-method">
+                            <div class="contact-method-icon">📧</div>
+                            <div class="contact-method-text">
+                                <h4>Email</h4>
+                                <p>contact@pubkit.fr</p>
+                            </div>
+                        </a>
+                        <a href="https://instagram.com/VOTRE_COMPTE" class="contact-method" target="_blank">
+                            <div class="contact-method-icon">📷</div>
+                            <div class="contact-method-text">
+                                <h4>Instagram</h4>
+                                <p>@pubkit</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-image">
+                    <div class="contact-image-icon">🎨</div>
+                    <h3>PubKit Studio</h3>
+                    <p>Création de visuels publicitaires professionnels</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Des visuels pro, sans prise de tête</h2>
-            <p>Concentrez-vous sur votre business, je m'occupe de vos créations publicitaires.</p>
-            <a href="#contact" class="btn">Me contacter →</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <a href="#" class="logo">
-                <div class="logo-icon">P</div>
-                PubKit
-            </a>
-            <p>Création de visuels publicitaires professionnels</p>
-            <div class="footer-links-inline">
-                <a href="#services">Services</a>
-                <a href="#portfolio">Réalisations</a>
-                <a href="#pricing">Tarifs</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-mark">PK</div>
+                        PubKit Studio
+                    </a>
+                    <p>Agence de création de visuels publicitaires. Des designs professionnels pour booster votre business.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#pricing">Tarifs</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="https://wa.me/VOTRE_NUMERO">WhatsApp</a></li>
+                        <li><a href="mailto:contact@pubkit.fr">Email</a></li>
+                        <li><a href="https://instagram.com/VOTRE_COMPTE">Instagram</a></li>
+                    </ul>
+                </div>
             </div>
-            <p style="margin-top: 2rem;">© 2026 PubKit. Tous droits réservés.</p>
+            <div class="footer-bottom">
+                <p>© 2026 PubKit Studio. Tous droits réservés.</p>
+                <p>Créé avec ❤️</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+        // Pack selection
+        document.querySelectorAll('.pack-option').forEach(pack => {
+            pack.addEventListener('click', () => {
+                document.querySelectorAll('.pack-option').forEach(p => p.classList.remove('selected'));
+                pack.classList.add('selected');
+                document.getElementById('selectedPack').value = pack.dataset.pack;
+                document.getElementById('selectedPrice').value = pack.dataset.price + '€';
+            });
         });
 
         // FAQ Accordion
@@ -1664,29 +1676,18 @@
             button.addEventListener('click', () => {
                 const item = button.parentElement;
                 const isActive = item.classList.contains('active');
-                
-                // Close all items
-                document.querySelectorAll('.faq-item').forEach(faq => {
-                    faq.classList.remove('active');
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
-                }
+                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
             });
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
