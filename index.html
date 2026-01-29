@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PubKit Studio - Agence de Création Publicitaire</title>
-    <meta name="description" content="Agence de création de visuels publicitaires professionnels. Facebook Ads, Instagram, E-commerce. Devis en 2 minutes.">
-    <link rel="preconnect" href="https://imgur.com/a/PttvpYp">
+    <title>Ummah Connect - Réseau Social Musulman</title>
+    <meta name="description" content="Le réseau social pour la communauté musulmane - Partage, échange et spiritualité">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2D5A4A;
-            --primary-light: #3D7A64;
-            --secondary: #0D1B2A;
-            --accent: #D4A853;
-            --cream: #FAF8F5;
-            --white: #FFFFFF;
-            --text: #1B1B1B;
-            --text-light: #5A5A5A;
-            --border: #E8E4DF;
-            --shadow: 0 4px 24px rgba(13, 27, 42, 0.08);
-            --shadow-lg: 0 12px 48px rgba(13, 27, 42, 0.12);
+            --primary: #1a5f4f;
+            --primary-light: #2d7a67;
+            --primary-dark: #0f3d32;
+            --secondary: #d4a853;
+            --accent: #c9865a;
+            --bg-main: #f8f9fa;
+            --bg-card: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #6c757d;
+            --text-light: #adb5bd;
+            --border: #e9ecef;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            --gradient-gold: linear-gradient(135deg, #d4a853 0%, #c9865a 100%);
         }
 
         * {
@@ -29,1679 +34,1209 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'DM Sans', sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            background: var(--cream);
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Fraunces', serif;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Navbar */
-        .navbar {
+        /* Islamic Pattern Background */
+        body::before {
+            content: '';
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-            background: rgba(250, 248, 245, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(26, 95, 79, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 168, 83, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .nav-container {
+        /* Header */
+        .header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0.75rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--secondary);
-            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.5rem;
+            font-family: 'Amiri', serif;
         }
 
-        .logo-mark {
-            width: 36px;
-            height: 36px;
-            background: var(--primary);
-            border-radius: 8px;
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            position: relative;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            align-items: center;
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 14px;
+            padding: 3px;
+            background: var(--gradient-gold);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.3;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-light);
-            font-weight: 500;
+        .search-bar {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid var(--border);
+            border-radius: 24px;
             font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            background: var(--secondary);
-            color: white !important;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
+            background: var(--bg-main);
             transition: all 0.3s;
         }
 
-        .nav-cta:hover {
-            background: var(--primary);
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: var(--shadow-sm);
         }
 
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--secondary);
-            margin: 5px 0;
-            border-radius: 2px;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 10rem 0 6rem;
-            background: var(--cream);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-content {
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 0.5rem 1rem;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-tag::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-        }
-
-        .hero-text {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            max-width: 480px;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
+        .header-actions {
             display: flex;
+            align-items: center;
             gap: 1rem;
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
             font-weight: 600;
-            font-size: 1rem;
             text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            transition: all 0.3s;
             border: none;
-            font-family: inherit;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-family: 'Cairo', sans-serif;
         }
 
         .btn-primary {
-            background: var(--secondary);
+            background: var(--gradient-primary);
             color: white;
+            box-shadow: var(--shadow-sm);
         }
 
         .btn-primary:hover {
-            background: var(--primary);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--secondary);
-            border: 2px solid var(--border);
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
 
         .btn-outline:hover {
-            border-color: var(--secondary);
-        }
-
-        .hero-visual {
-            position: relative;
-            animation: fadeIn 1s ease 0.2s both;
-        }
-
-        .hero-image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .hero-card {
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-        }
-
-        .hero-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .hero-card:first-child {
-            grid-row: span 2;
-        }
-
-        .hero-card-content {
-            height: 100%;
-            min-height: 180px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .hero-card-content.style-1 {
-            background: linear-gradient(135deg, #2D5A4A 0%, #1a3a2e 100%);
-            color: white;
-            min-height: 380px;
-        }
-
-        .hero-card-content.style-2 {
-            background: linear-gradient(135deg, #D4A853 0%, #b8923f 100%);
-            color: white;
-        }
-
-        .hero-card-content.style-3 {
-            background: linear-gradient(135deg, #0D1B2A 0%, #1a2d42 100%);
-            color: white;
-        }
-
-        .hero-card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-card-title {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        /* Trust Bar */
-        .trust-bar {
-            padding: 3rem 0;
-            background: var(--white);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .trust-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        .trust-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--cream);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        /* Services */
-        .services {
-            padding: 6rem 0;
-            background: var(--white);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-tag {
-            display: inline-block;
-            background: var(--cream);
-            color: var(--primary);
-            padding: 0.4rem 1rem;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            border: 1px solid var(--border);
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .service-card {
-            background: var(--cream);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            transition: all 0.3s;
-        }
-
-        .service-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--white);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border);
-        }
-
-        .service-card h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--secondary);
-        }
-
-        .service-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* Portfolio */
-        .portfolio {
-            padding: 6rem 0;
-            background: var(--cream);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem;
-        }
-
-        .portfolio-item {
-            aspect-ratio: 1;
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .portfolio-item:hover {
-            transform: scale(1.03);
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-bg {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(13, 27, 42, 0.85);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-            padding: 1rem;
-        }
-
-        .portfolio-overlay h4 {
-            color: white;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .portfolio-overlay p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.8rem;
-        }
-
-        .portfolio-note {
-            text-align: center;
-            margin-top: 2.5rem;
-            padding: 1.5rem;
-            background: var(--white);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        .portfolio-note p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* Pricing & Order Form */
-        .pricing {
-            padding: 6rem 0;
-            background: var(--secondary);
-        }
-
-        .pricing .section-header h2,
-        .pricing .section-header p {
-            color: white;
-        }
-
-        .pricing .section-tag {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.2);
-            color: var(--accent);
-        }
-
-        .order-container {
-            background: var(--white);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .order-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-        }
-
-        .order-packs {
-            padding: 3rem;
-            background: var(--cream);
-            border-right: 1px solid var(--border);
-        }
-
-        .order-packs h3 {
-            font-size: 1.3rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .order-packs > p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-        }
-
-        .pack-option {
-            background: var(--white);
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .pack-option:hover {
-            border-color: var(--primary);
-        }
-
-        .pack-option.selected {
-            border-color: var(--primary);
-            background: rgba(45, 90, 74, 0.05);
-        }
-
-        .pack-option.selected::after {
-            content: '✓';
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 24px;
-            height: 24px;
             background: var(--primary);
             color: white;
-            border-radius: 50%;
+        }
+
+        .btn-icon {
+            width: 42px;
+            height: 42px;
+            padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 700;
+            background: var(--bg-main);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            position: relative;
         }
 
-        .pack-popular {
+        .notification-badge {
             position: absolute;
-            top: -10px;
-            left: 1.5rem;
-            background: var(--accent);
-            color: var(--secondary);
+            top: -4px;
+            right: -4px;
+            background: #dc3545;
+            color: white;
             font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 10px;
             font-weight: 700;
-            padding: 0.25rem 0.75rem;
-            border-radius: 100px;
         }
 
-        .pack-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.75rem;
+        /* Main Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .pack-name {
-            font-family: 'DM Sans', sans-serif;
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-title {
             font-weight: 700;
             font-size: 1.1rem;
-            color: var(--secondary);
-        }
-
-        .pack-price {
-            font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
+            margin-bottom: 1rem;
             color: var(--primary);
-        }
-
-        .pack-features {
-            list-style: none;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .pack-features li {
-            padding: 0.3rem 0;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .pack-features li::before {
-            content: '•';
-            color: var(--primary);
-            font-weight: 700;
+        .nav-menu {
+            list-style: none;
         }
 
-        .order-form {
-            padding: 3rem;
-        }
-
-        .order-form h3 {
-            font-size: 1.3rem;
-            color: var(--secondary);
+        .nav-item {
             margin-bottom: 0.5rem;
         }
 
-        .order-form > p {
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--bg-main);
+            color: var(--primary);
+        }
+
+        .nav-icon {
+            font-size: 1.3rem;
+            width: 24px;
+        }
+
+        /* Feed */
+        .feed {
+            min-height: 100vh;
+        }
+
+        .post-composer {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+        }
+
+        .composer-header {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .composer-input {
+            flex: 1;
+        }
+
+        .composer-textarea {
+            width: 100%;
+            min-height: 80px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border 0.3s;
+        }
+
+        .composer-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .composer-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .composer-tools {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .tool-btn {
+            padding: 0.5rem;
+            background: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+
+        .tool-btn:hover {
+            background: var(--bg-main);
+            color: var(--primary);
+        }
+
+        /* Post Card */
+        .post-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+            transition: box-shadow 0.3s;
+        }
+
+        .post-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .post-author {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .post-author-info h4 {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .post-meta {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .post-menu {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
             color: var(--text-light);
-            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+
+        .post-content {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .post-image {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .action-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .action-btn:hover {
+            background: var(--bg-main);
+            color: var(--primary);
+        }
+
+        .action-btn.liked {
+            color: #dc3545;
+        }
+
+        /* Spiritual Section */
+        .spiritual-card {
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .spiritual-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .spiritual-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .spiritual-icon {
+            font-size: 2rem;
+        }
+
+        .spiritual-title {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .spiritual-content {
+            position: relative;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            line-height: 2.2;
+            text-align: right;
+            margin-bottom: 1rem;
+            direction: rtl;
+        }
+
+        .translation {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .reference {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-align: right;
+        }
+
+        .refresh-btn {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .refresh-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Trending Section */
+        .trending-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+
+        .trending-tag {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .trending-count {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Auth Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: var(--shadow-lg);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            text-align: center;
             margin-bottom: 2rem;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-family: 'Amiri', serif;
+        }
+
+        .modal-header p {
+            color: var(--text-secondary);
         }
 
         .form-group {
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
+        .form-label {
             display: block;
             font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--secondary);
             margin-bottom: 0.5rem;
+            color: var(--text-primary);
         }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-input {
             width: 100%;
-            padding: 0.9rem 1rem;
+            padding: 0.875rem 1rem;
             border: 1px solid var(--border);
-            border-radius: 8px;
-            font-family: inherit;
+            border-radius: 12px;
             font-size: 1rem;
-            transition: border-color 0.3s;
-            background: var(--white);
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s;
         }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-input:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 95, 79, 0.1);
         }
 
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .form-note {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-top: 0.5rem;
-        }
-
-        .form-submit {
+        .modal-actions {
             margin-top: 2rem;
         }
 
-        .form-submit .btn {
+        .btn-full {
             width: 100%;
-            padding: 1.1rem;
-            font-size: 1.05rem;
+            margin-bottom: 1rem;
         }
 
-        .form-secure {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        /* Process */
-        .process {
-            padding: 6rem 0;
-            background: var(--white);
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .process-step {
+        .modal-footer {
             text-align: center;
-            position: relative;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
         }
 
-        .process-step::after {
-            content: '';
+        .modal-footer a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .close-modal {
             position: absolute;
-            top: 35px;
-            right: -1rem;
-            width: calc(100% - 70px);
-            height: 2px;
-            background: var(--border);
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            cursor: pointer;
         }
 
-        .process-step:last-child::after {
+        /* Loading */
+        .loading {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .search-bar {
+                display: none;
+            }
+        }
+
+        /* Hidden by default (will be shown when logged in) */
+        .logged-out {
             display: none;
         }
 
-        .process-number {
-            width: 70px;
-            height: 70px;
-            background: var(--cream);
-            border: 2px solid var(--border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 0 auto 1.25rem;
-            position: relative;
-            z-index: 1;
+        .logged-in {
+            display: block;
         }
-
-        .process-step h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-        }
-
-        .process-step p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 6rem 0;
-            background: var(--cream);
-        }
-
-        .faq-grid {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 1.25rem 1.5rem;
-            background: none;
-            border: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            text-align: left;
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--secondary);
-            transition: color 0.3s;
-        }
-
-        .faq-question:hover {
-            color: var(--primary);
-        }
-
-        .faq-icon {
-            width: 28px;
-            height: 28px;
-            background: var(--cream);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-            flex-shrink: 0;
-            color: var(--text-light);
-        }
-
-        .faq-item.active .faq-icon {
-            background: var(--primary);
-            color: white;
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-        }
-
-        .faq-answer p {
-            padding: 0 1.5rem 1.25rem;
-            color: var(--text-light);
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        /* Contact */
-        .contact {
-            padding: 6rem 0;
-            background: var(--white);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .contact-info h2 {
-            font-size: 2.2rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        .contact-info p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.25rem;
-            background: var(--cream);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.3s;
-            border: 1px solid var(--border);
-        }
-
-        .contact-method:hover {
-            border-color: var(--primary);
-            transform: translateX(5px);
-        }
-
-        .contact-method-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--white);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-        }
-
-        .contact-method-text h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .contact-method-text p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin: 0;
-        }
-
-        .contact-image {
-            background: var(--cream);
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
-            border: 1px solid var(--border);
-        }
-
-        .contact-image-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-image h3 {
-            font-size: 1.3rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-image p {
-            color: var(--text-light);
-            margin: 0;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--secondary);
-            color: white;
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-brand .logo {
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .footer-brand .logo-mark {
-            background: var(--primary);
-        }
-
-        .footer-brand p {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.95rem;
-            max-width: 280px;
-        }
-
-        .footer-links h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: white;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.5);
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        /* Mobile */
-        @media (max-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero-text {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .order-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .order-packs {
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 3rem;
-            }
-
-            .process-step::after {
-                display: none;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-image {
-                order: -1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero {
-                padding: 8rem 0 4rem;
-            }
-
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .trust-content {
-                gap: 2rem;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-brand p {
-                margin: 0 auto;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .hero-card:nth-child(1) { animation: float 6s ease-in-out infinite; }
-        .hero-card:nth-child(2) { animation: float 6s ease-in-out infinite 0.5s; }
-        .hero-card:nth-child(3) { animation: float 6s ease-in-out infinite 1s; }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
             <a href="#" class="logo">
-                <div class="logo-mark">PK</div>
-                PubKit Studio
+                <div class="logo-icon">☪</div>
+                <span>Ummah Connect</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#pricing">Tarifs</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#pricing" class="nav-cta">Commander</a></li>
-            </ul>
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div class="hero-tag">Agence de création publicitaire</div>
-                    <h1>Des visuels qui <span>convertissent</span>, créés pour vous</h1>
-                    <p class="hero-text">Je conçois vos publicités Facebook, Instagram et e-commerce. Des designs professionnels, livrés sous 48h, adaptés à votre marque.</p>
-                    <div class="hero-buttons">
-                        <a href="#pricing" class="btn btn-primary">Commander maintenant</a>
-                        <a href="#portfolio" class="btn btn-outline">Voir mes créations</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-image-grid">
-                        <div class="hero-card">
-                            <div class="hero-card-content style-1">
-                                <div class="hero-card-icon">🎯</div>
-                                <!-- Facebook Ads -->
-<!-- Ligne 1210-1216 : Facebook Ads -->
-<div class="hero-card">
-    <div class="hero-card-content style-1">
-        <div class="hero-card-icon"><img src="https://i.imgur.com/TON_LIEN_ICI.png" alt="Facebook" style="width: 60px; height: 60px; object-fit: contain;"></div>
-        <div class="hero-card-title">Facebook Ads</div>
-    </div>
-</div>
-
-<!-- Ligne 1217-1222 : Instagram -->
-<div class="hero-card">
-    <div class="hero-card-content style-2">
-        <div class="hero-card-icon"><img src="LIEN_IMAGE_INSTAGRAM" alt="Instagram" style="width: 60px; height: 60px; object-fit: contain;"></div>
-        <div class="hero-card-title">Instagram</div>
-    </div>
-</div>
-
-<!-- Ligne 1223-1228 : E-commerce -->
-<div class="hero-card">
-    <div class="hero-card-content style-3">
-        <div class="hero-card-icon"><img src="LIEN_IMAGE_ECOMMERCE" alt="E-commerce" style="width: 60px; height: 60px; object-fit: contain;"></div>
-        <div class="hero-card-title">E-commerce</div>
-    </div>
-</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="search-bar logged-in">
+                <input type="text" class="search-input" placeholder="Rechercher sur Ummah Connect...">
             </div>
-        </div>
-    </section>
 
-    <!-- Trust Bar -->
-    <section class="trust-bar">
-        <div class="container">
-            <div class="trust-content">
-                <div class="trust-item">
-                    <div class="trust-icon">⚡</div>
-                    <span>Livraison sous 48h</span>
+            <div class="header-actions">
+                <div class="logged-out">
+                    <button class="btn btn-outline" onclick="openLoginModal()">Connexion</button>
+                    <button class="btn btn-primary" onclick="openRegisterModal()">S'inscrire</button>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon">🔄</div>
-                    <span>Révisions illimitées</span>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">💬</div>
-                    <span>Support WhatsApp</span>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">✨</div>
-                    <span>100% sur-mesure</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Services</span>
-                <h2>Ce que je peux créer pour vous</h2>
-                <p>Des visuels adaptés à chaque plateforme et objectif</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>Facebook Ads</h3>
-                    <p>Publicités optimisées pour le fil d'actualité. Formats adaptés pour maximiser vos clics et conversions.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>Instagram Posts & Stories</h3>
-                    <p>Contenus visuels captivants pour votre feed et vos stories. Designs qui arrêtent le scroll.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛒</div>
-                    <h3>E-commerce</h3>
-                    <p>Visuels produits, bannières promo, carrousels. Parfait pour booster vos ventes en ligne.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📚</div>
-                    <h3>Carrousels</h3>
-                    <p>Séquences de visuels pour raconter une histoire ou présenter plusieurs produits.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Coaching & Formation</h3>
-                    <p>Visuels pour vos lancements, webinaires et programmes. Design qui inspire confiance.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🍔</div>
-                    <h3>Local & Restauration</h3>
-                    <p>Menus, promos, événements. Visuels appétissants pour attirer des clients locaux.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Portfolio</span>
-                <h2>Exemples de réalisations</h2>
-                <p>Quelques visuels créés pour des clients</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #2D5A4A 0%, #1a3a2e 100%);">🛍️</div>
-                    <div class="portfolio-overlay">
-                        <h4>Promo E-commerce</h4>
-                        <p>Facebook Ads</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #D4A853 0%, #b8923f 100%);">💄</div>
-                    <div class="portfolio-overlay">
-                        <h4>Collection Beauté</h4>
-                        <p>Instagram Post</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #0D1B2A 0%, #1a2d42 100%);">🏋️</div>
-                    <div class="portfolio-overlay">
-                        <h4>Programme Fitness</h4>
-                        <p>Story Instagram</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #E07A5F 0%, #c4684f 100%);">🍔</div>
-                    <div class="portfolio-overlay">
-                        <h4>Menu Restaurant</h4>
-                        <p>Facebook Ads</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #81B29A 0%, #6a9a82 100%);">🏠</div>
-                    <div class="portfolio-overlay">
-                        <h4>Annonce Immo</h4>
-                        <p>Carrousel</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #F2CC8F 0%, #d9b67a 100%);">📚</div>
-                    <div class="portfolio-overlay">
-                        <h4>Formation en ligne</h4>
-                        <p>Facebook Ads</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #3D405B 0%, #2d2f44 100%);">✈️</div>
-                    <div class="portfolio-overlay">
-                        <h4>Agence Voyage</h4>
-                        <p>Story Instagram</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-bg" style="background: linear-gradient(135deg, #BC6C25 0%, #9a5a1f 100%);">💼</div>
-                    <div class="portfolio-overlay">
-                        <h4>Coaching Business</h4>
-                        <p>Carrousel</p>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-note">
-                <p>✨ Chaque création est unique et personnalisée selon votre marque, vos couleurs et vos objectifs.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing & Order -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Commander</span>
-                <h2>Choisissez votre pack et lancez votre projet</h2>
-                <p>Sélectionnez une offre puis remplissez le formulaire</p>
-            </div>
-            <div class="order-container">
-                <div class="order-grid">
-                    <div class="order-packs">
-                        <h3>1. Choisissez votre pack</h3>
-                        <p>Cliquez sur l'offre qui correspond à vos besoins</p>
-                        
-                        <div class="pack-option" data-pack="starter" data-price="29">
-                            <div class="pack-header">
-                                <div class="pack-name">Starter</div>
-                                <div class="pack-price">29€</div>
-                            </div>
-                            <ul class="pack-features">
-                                <li>3 visuels publicitaires</li>
-                                <li>1 format au choix</li>
-                                <li>Livraison 48h</li>
-                                <li>2 révisions incluses</li>
-                            </ul>
-                        </div>
-
-                        <div class="pack-option selected" data-pack="pro" data-price="69">
-                            <div class="pack-popular">POPULAIRE</div>
-                            <div class="pack-header">
-                                <div class="pack-name">Pro</div>
-                                <div class="pack-price">69€</div>
-                            </div>
-                            <ul class="pack-features">
-                                <li>8 visuels publicitaires</li>
-                                <li>Tous formats inclus</li>
-                                <li>Livraison 48h</li>
-                                <li>Révisions illimitées</li>
-                            </ul>
-                        </div>
-
-                        <div class="pack-option" data-pack="business" data-price="149">
-                            <div class="pack-header">
-                                <div class="pack-name">Business</div>
-                                <div class="pack-price">149€</div>
-                            </div>
-                            <ul class="pack-features">
-                                <li>20 visuels publicitaires</li>
-                                <li>Tous formats inclus</li>
-                                <li>Livraison 72h</li>
-                                <li>Révisions illimitées</li>
-                                <li>Support prioritaire</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="order-form">
-                        <h3>2. Décrivez votre projet</h3>
-                        <p>Ces informations m'aideront à créer vos visuels</p>
-                        
-                        <form id="orderForm" action="https://formsubmit.co/VOTRE_EMAIL" method="POST">
-                            <input type="hidden" name="pack" id="selectedPack" value="pro">
-                            <input type="hidden" name="prix" id="selectedPrice" value="69€">
-                            <input type="hidden" name="_subject" value="Nouvelle commande PubKit">
-                            <input type="hidden" name="_captcha" value="false">
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="name">Votre nom *</label>
-                                    <input type="text" id="name" name="name" required placeholder="Mohammed">
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email *</label>
-                                    <input type="email" id="email" name="email" required placeholder="vous@email.com">
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="phone">WhatsApp / Téléphone *</label>
-                                    <input type="tel" id="phone" name="phone" required placeholder="+33 6 12 34 56 78">
-                                </div>
-                                <div class="form-group">
-                                    <label for="business">Votre activité *</label>
-                                    <input type="text" id="business" name="business" required placeholder="E-commerce, Coaching...">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="platform">Pour quelle(s) plateforme(s) ? *</label>
-                                <select id="platform" name="platform" required>
-                                    <option value="">Sélectionnez...</option>
-                                    <option value="facebook">Facebook Ads</option>
-                                    <option value="instagram">Instagram (Posts/Stories)</option>
-                                    <option value="facebook-instagram">Facebook + Instagram</option>
-                                    <option value="ecommerce">E-commerce</option>
-                                    <option value="autre">Autre (précisez ci-dessous)</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="description">Décrivez votre projet *</label>
-                                <textarea id="description" name="description" required placeholder="Décrivez ce que vous vendez, le message à communiquer, les couleurs de votre marque, et tout autre détail utile..."></textarea>
-                                <p class="form-note">Plus vous êtes précis, plus vos visuels seront adaptés à vos besoins.</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="examples">Avez-vous des exemples de visuels que vous aimez ? (optionnel)</label>
-                                <input type="text" id="examples" name="examples" placeholder="Lien vers des images qui vous inspirent">
-                            </div>
-
-                            <div class="form-submit">
-                                <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
-                                <p class="form-secure">🔒 Vos informations restent confidentielles</p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process -->
-    <section class="process">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Processus</span>
-                <h2>Comment ça fonctionne</h2>
-                <p>4 étapes simples pour obtenir vos visuels</p>
-            </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="process-number">1</div>
-                    <h3>Vous commandez</h3>
-                    <p>Choisissez votre pack et décrivez votre projet</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">2</div>
-                    <h3>Je vous contacte</h3>
-                    <p>On échange par WhatsApp pour affiner vos besoins</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">3</div>
-                    <h3>Je crée</h3>
-                    <p>Vos visuels sont prêts sous 48h</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">4</div>
-                    <h3>Vous validez</h3>
-                    <p>Révisions jusqu'à satisfaction totale</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">FAQ</span>
-                <h2>Questions fréquentes</h2>
-                <p>Tout ce que vous devez savoir</p>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Comment se passe le paiement ?
-                        <span class="faq-icon">+</span>
+                <div class="logged-in" style="display: none;">
+                    <button class="btn-icon" title="Notifications">
+                        🔔
+                        <span class="notification-badge">3</span>
                     </button>
-                    <div class="faq-answer">
-                        <p>Le paiement se fait par virement bancaire ou PayPal après validation du devis. Pour les nouveaux clients : 50% à la commande, 50% à la livraison.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Quel est le délai de livraison ?
-                        <span class="faq-icon">+</span>
+                    <button class="btn-icon" onclick="showProfile()">
+                        <div class="avatar" style="width: 42px; height: 42px; font-size: 1rem;">M</div>
                     </button>
-                    <div class="faq-answer">
-                        <p>Les visuels sont livrés sous 48h pour les packs Starter et Pro, et sous 72h pour le pack Business. Livraison express possible sur demande.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Comment fonctionnent les révisions ?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Je vous envoie les visuels, vous me donnez vos retours, et je modifie jusqu'à votre entière satisfaction. Les révisions sont illimitées sur les packs Pro et Business.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Sous quel format sont livrés les visuels ?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Vous recevez vos visuels en haute définition (PNG ou JPG). Les fichiers sont prêts à être utilisés directement sur vos plateformes publicitaires.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Puis-je avoir un devis personnalisé ?
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Bien sûr ! Si vous avez des besoins spécifiques ou un volume important, contactez-moi et je vous ferai une offre adaptée à votre projet.</p>
-                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Une question ? Un projet sur-mesure ?</h2>
-                    <p>N'hésitez pas à me contacter, je réponds généralement dans l'heure.</p>
-                    <div class="contact-methods">
-                        <a href="https://wa.me/VOTRE_NUMERO" class="contact-method" target="_blank">
-                            <div class="contact-method-icon">💬</div>
-                            <div class="contact-method-text">
-                                <h4>WhatsApp</h4>
-                                <p>Réponse rapide garantie</p>
-                            </div>
-                        </a>
-                        <a href="mailto:contact@pubkit.fr" class="contact-method">
-                            <div class="contact-method-icon">📧</div>
-                            <div class="contact-method-text">
-                                <h4>Email</h4>
-                                <p>contact@pubkit.fr</p>
-                            </div>
-                        </a>
-                        <a href="https://instagram.com/VOTRE_COMPTE" class="contact-method" target="_blank">
-                            <div class="contact-method-icon">📷</div>
-                            <div class="contact-method-text">
-                                <h4>Instagram</h4>
-                                <p>@pubkit</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-image">
-                    <div class="contact-image-icon">🎨</div>
-                    <h3>PubKit Studio</h3>
-                    <p>Création de visuels publicitaires professionnels</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <div class="logo-mark">PK</div>
-                        PubKit Studio
-                    </a>
-                    <p>Agence de création de visuels publicitaires. Des designs professionnels pour booster votre business.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#pricing">Tarifs</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar logged-in" style="display: none;">
+            <div class="sidebar-card">
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <span class="nav-icon">🏠</span>
+                                <span>Accueil</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <span class="nav-icon">🔥</span>
+                                <span>Tendances</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <span class="nav-icon">📖</span>
+                                <span>Spiritualité</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <span class="nav-icon">💬</span>
+                                <span>Confessions</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <span class="nav-icon">😄</span>
+                                <span>Humour</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <span class="nav-icon">❓</span>
+                                <span>Questions Fiqh</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <span class="nav-icon">👤</span>
+                                <span>Mon Profil</span>
+                            </a>
+                        </li>
                     </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Feed -->
+        <main class="feed">
+            <!-- Welcome Message (shown when not logged in) -->
+            <div class="logged-out">
+                <div class="spiritual-card">
+                    <div class="spiritual-header">
+                        <span class="spiritual-icon">☪</span>
+                        <h2 class="spiritual-title">Bienvenue sur Ummah Connect</h2>
+                    </div>
+                    <div class="spiritual-content">
+                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+                            Le premier réseau social dédié à la communauté musulmane
+                        </p>
+                        <p style="opacity: 0.9;">
+                            Partagez, échangez et grandissez spirituellement avec vos frères et sœurs. 
+                            Un espace bienveillant et respectueux des valeurs islamiques.
+                        </p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                            <button class="btn btn-primary" onclick="openRegisterModal()" style="background: white; color: var(--primary);">
+                                S'inscrire maintenant
+                            </button>
+                            <button class="btn btn-outline" onclick="openLoginModal()" style="border-color: white; color: white;">
+                                J'ai déjà un compte
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="https://wa.me/VOTRE_NUMERO">WhatsApp</a></li>
-                        <li><a href="mailto:contact@pubkit.fr">Email</a></li>
-                        <li><a href="https://instagram.com/VOTRE_COMPTE">Instagram</a></li>
-                    </ul>
+
+                <!-- Features Preview -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div class="post-card">
+                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">📖 Contenu Spirituel</h3>
+                        <p>Hadiths, versets coraniques et rappels quotidiens pour nourrir votre foi</p>
+                    </div>
+                    <div class="post-card">
+                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">💬 Échanges Authentiques</h3>
+                        <p>Partagez vos expériences et soutenez-vous mutuellement dans la bienveillance</p>
+                    </div>
+                    <div class="post-card">
+                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">🛡️ Espace Sécurisé</h3>
+                        <p>Modération stricte pour garantir un environnement respectueux et halal</p>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 PubKit Studio. Tous droits réservés.</p>
-                <p>Créé avec ❤️</p>
+
+            <!-- Post Composer (shown when logged in) -->
+            <div class="post-composer logged-in" style="display: none;">
+                <div class="composer-header">
+                    <div class="avatar">M</div>
+                    <div class="composer-input">
+                        <textarea 
+                            class="composer-textarea" 
+                            id="postContent"
+                            placeholder="Partagez quelque chose avec la communauté..."></textarea>
+                    </div>
+                </div>
+                <div class="composer-actions">
+                    <div class="composer-tools">
+                        <button class="tool-btn" title="Ajouter une image">🖼️</button>
+                        <button class="tool-btn" title="Ajouter un emoji">😊</button>
+                        <button class="tool-btn" title="Ajouter un hashtag">#</button>
+                    </div>
+                    <button class="btn btn-primary" onclick="publishPost()">Publier</button>
+                </div>
+            </div>
+
+            <!-- Feed Posts -->
+            <div id="feedContainer">
+                <!-- Posts will be added here dynamically -->
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar logged-in" style="display: none;">
+            <!-- Hadith of the Day -->
+            <div class="spiritual-card">
+                <div class="spiritual-header">
+                    <span class="spiritual-icon">📖</span>
+                    <h3 class="spiritual-title">Hadith du jour</h3>
+                </div>
+                <div class="spiritual-content">
+                    <p class="arabic-text">
+                        إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ
+                    </p>
+                    <p class="translation">
+                        "Les actes ne valent que par leurs intentions"
+                    </p>
+                    <p class="reference">- Sahih al-Bukhari</p>
+                    <button class="refresh-btn" onclick="refreshHadith()">Nouveau hadith</button>
+                </div>
+            </div>
+
+            <!-- Verse of the Day -->
+            <div class="spiritual-card" style="background: var(--gradient-gold);">
+                <div class="spiritual-header">
+                    <span class="spiritual-icon">✨</span>
+                    <h3 class="spiritual-title">Verset du jour</h3>
+                </div>
+                <div class="spiritual-content">
+                    <p class="arabic-text">
+                        وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا
+                    </p>
+                    <p class="translation">
+                        "Quiconque craint Allah, Il lui donnera une issue favorable"
+                    </p>
+                    <p class="reference">- Sourate At-Talaq, verset 2</p>
+                </div>
+            </div>
+
+            <!-- Trending Topics -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">🔥 Tendances</h3>
+                <div class="trending-item">
+                    <div class="trending-tag">#Ramadan2026</div>
+                    <div class="trending-count">2.5k posts</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-tag">#ConseilDuJour</div>
+                    <div class="trending-count">1.8k posts</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-tag">#FrèresEtSœurs</div>
+                    <div class="trending-count">1.2k posts</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-tag">#Doua</div>
+                    <div class="trending-count">956 posts</div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('loginModal')">×</button>
+            <div class="modal-header">
+                <h2>☪ Connexion</h2>
+                <p>Content de vous revoir !</p>
+            </div>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" id="loginEmail" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Mot de passe</label>
+                    <input type="password" class="form-input" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary btn-full">Se connecter</button>
+                </div>
+            </form>
+            <div class="modal-footer">
+                Pas encore de compte ? <a href="#" onclick="openRegisterModal()">S'inscrire</a>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('registerModal')">×</button>
+            <div class="modal-header">
+                <h2>☪ Inscription</h2>
+                <p>Rejoignez la communauté</p>
+            </div>
+            <form onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label class="form-label">Nom complet</label>
+                    <input type="text" class="form-input" id="registerName" placeholder="Mohammed Ali" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" id="registerEmail" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Mot de passe</label>
+                    <input type="password" class="form-input" id="registerPassword" placeholder="••••••••" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary btn-full">S'inscrire</button>
+                </div>
+            </form>
+            <div class="modal-footer">
+                Déjà membre ? <a href="#" onclick="openLoginModal()">Se connecter</a>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // Pack selection
-        document.querySelectorAll('.pack-option').forEach(pack => {
-            pack.addEventListener('click', () => {
-                document.querySelectorAll('.pack-option').forEach(p => p.classList.remove('selected'));
-                pack.classList.add('selected');
-                document.getElementById('selectedPack').value = pack.dataset.pack;
-                document.getElementById('selectedPrice').value = pack.dataset.price + '€';
-            });
-        });
+        // State Management
+        let currentUser = null;
+        let posts = [];
+        let postIdCounter = 1;
 
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const item = button.parentElement;
-                const isActive = item.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
-                if (!isActive) item.classList.add('active');
-            });
-        });
+        // Sample data
+        const samplePosts = [
+            {
+                id: 1,
+                author: "Fatima Rahman",
+                avatar: "F",
+                time: "Il y a 2 heures",
+                content: "Alhamdulillah, quelle belle journée pour se rapprocher d'Allah ✨ N'oublions pas nos 5 prières quotidiennes, c'est le pilier de notre foi 🤲",
+                likes: 127,
+                comments: 23,
+                isLiked: false
+            },
+            {
+                id: 2,
+                author: "Ahmed Benali",
+                avatar: "A",
+                time: "Il y a 5 heures",
+                content: "Un rappel important : 'Le croyant fort est meilleur et plus aimé d'Allah que le croyant faible' (Muslim). Prenons soin de notre santé physique et spirituelle ! 💪🤲",
+                likes: 89,
+                comments: 15,
+                isLiked: false
+            },
+            {
+                id: 3,
+                author: "Khadija Mansour",
+                avatar: "K",
+                time: "Il y a 1 jour",
+                content: "SubhanAllah, j'ai terminé la lecture de Sourate Al-Kahf aujourd'hui. Quelle sagesse dans chaque verset ! Qui d'autre la lit le vendredi ? 📖✨",
+                likes: 203,
+                comments: 45,
+                isLiked: false
+            }
+        ];
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const hadiths = [
+            {
+                arabic: "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ",
+                translation: "Les actes ne valent que par leurs intentions",
+                reference: "Sahih al-Bukhari"
+            },
+            {
+                arabic: "الْمُؤْمِنُ الْقَوِيُّ خَيْرٌ وَأَحَبُّ إِلَى اللَّهِ مِنْ الْمُؤْمِنِ الضَّعِيفِ",
+                translation: "Le croyant fort est meilleur et plus aimé d'Allah que le croyant faible",
+                reference: "Sahih Muslim"
+            },
+            {
+                arabic: "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
+                translation: "Le meilleur d'entre vous est celui qui apprend le Coran et l'enseigne",
+                reference: "Sahih al-Bukhari"
+            },
+            {
+                arabic: "الدِّينُ النَّصِيحَةُ",
+                translation: "La religion, c'est le bon conseil",
+                reference: "Sahih Muslim"
+            }
+        ];
+
+        // Modal Functions
+        function openLoginModal() {
+            closeModal('registerModal');
+            document.getElementById('loginModal').classList.add('active');
+        }
+
+        function openRegisterModal() {
+            closeModal('loginModal');
+            document.getElementById('registerModal').classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Auth Functions
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const name = email.split('@')[0];
+            
+            currentUser = {
+                name: name.charAt(0).toUpperCase() + name.slice(1),
+                email: email,
+                avatar: name.charAt(0).toUpperCase()
+            };
+            
+            loginUser();
+            closeModal('loginModal');
+        }
+
+        function handleRegister(e) {
+            e.preventDefault();
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            
+            currentUser = {
+                name: name,
+                email: email,
+                avatar: name.charAt(0).toUpperCase()
+            };
+            
+            loginUser();
+            closeModal('registerModal');
+        }
+
+        function loginUser() {
+            // Hide logged-out elements
+            document.querySelectorAll('.logged-out').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Show logged-in elements
+            document.querySelectorAll('.logged-in').forEach(el => {
+                el.style.display = 'block';
+            });
+
+            // Update avatar
+            document.querySelectorAll('.avatar').forEach(el => {
+                el.textContent = currentUser.avatar;
+            });
+
+            // Load initial posts
+            posts = [...samplePosts];
+            renderPosts();
+        }
+
+        // Post Functions
+        function publishPost() {
+            const content = document.getElementById('postContent').value.trim();
+            
+            if (!content) {
+                alert('Veuillez écrire quelque chose avant de publier');
+                return;
+            }
+
+            const newPost = {
+                id: ++postIdCounter,
+                author: currentUser.name,
+                avatar: currentUser.avatar,
+                time: "À l'instant",
+                content: content,
+                likes: 0,
+                comments: 0,
+                isLiked: false
+            };
+
+            posts.unshift(newPost);
+            renderPosts();
+            
+            // Clear textarea
+            document.getElementById('postContent').value = '';
+            
+            // Success feedback
+            showNotification('Post publié avec succès ! 🎉');
+        }
+
+        function renderPosts() {
+            const container = document.getElementById('feedContainer');
+            
+            if (posts.length === 0) {
+                container.innerHTML = `
+                    <div class="post-card" style="text-align: center; padding: 3rem;">
+                        <h3 style="color: var(--text-secondary); margin-bottom: 0.5rem;">
+                            Aucun post pour le moment
+                        </h3>
+                        <p style="color: var(--text-light);">
+                            Soyez le premier à partager quelque chose !
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = posts.map(post => `
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="avatar">${post.avatar}</div>
+                            <div class="post-author-info">
+                                <h4>${post.author}</h4>
+                                <div class="post-meta">${post.time}</div>
+                            </div>
+                        </div>
+                        <button class="post-menu">⋯</button>
+                    </div>
+                    <div class="post-content">${post.content}</div>
+                    <div class="post-actions">
+                        <button class="action-btn ${post.isLiked ? 'liked' : ''}" onclick="toggleLike(${post.id})">
+                            ${post.isLiked ? '❤️' : '🤍'} ${post.likes}
+                        </button>
+                        <button class="action-btn">
+                            💬 ${post.comments}
+                        </button>
+                        <button class="action-btn">
+                            🔄 Partager
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleLike(postId) {
+            const post = posts.find(p => p.id === postId);
+            if (post) {
+                post.isLiked = !post.isLiked;
+                post.likes += post.isLiked ? 1 : -1;
+                renderPosts();
+            }
+        }
+
+        function refreshHadith() {
+            const randomHadith = hadiths[Math.floor(Math.random() * hadiths.length)];
+            // Update hadith display (you can enhance this)
+            showNotification('Nouveau hadith chargé ! 📖');
+        }
+
+        function showNotification(message) {
+            // Simple notification (you can enhance this with a proper toast)
+            alert(message);
+        }
+
+        function showProfile() {
+            if (currentUser) {
+                alert(`Profil de ${currentUser.name}\nEmail: ${currentUser.email}\n\n(Fonctionnalité de profil complète dans la Partie 2)`);
+            }
+        }
+
+        // Close modal on outside click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
                 }
             });
         });
+
+        // Initialize
+        console.log('🌙 Ummah Connect - Partie 1 chargée');
+        console.log('✅ Fonctionnalités actives:');
+        console.log('   - Inscription/Connexion');
+        console.log('   - Publication de posts');
+        console.log('   - Likes et commentaires');
+        console.log('   - Hadith et versets du jour');
+        console.log('   - Interface responsive');
     </script>
 </body>
 </html>
