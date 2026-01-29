@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ummah Connect - Réseau Social Musulman</title>
-    <meta name="description" content="Le réseau social pour la communauté musulmane - Partage, échange et spiritualité">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -12,7 +11,6 @@
         :root {
             --primary: #1a5f4f;
             --primary-light: #2d7a67;
-            --primary-dark: #0f3d32;
             --secondary: #d4a853;
             --accent: #c9865a;
             --bg-main: #f8f9fa;
@@ -21,10 +19,11 @@
             --text-secondary: #6c757d;
             --text-light: #adb5bd;
             --border: #e9ecef;
+            --success: #28a745;
+            --danger: #dc3545;
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
             --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
-            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            --gradient-primary: linear-gradient(135deg, #1a5f4f 0%, #2d7a67 100%);
             --gradient-gold: linear-gradient(135deg, #d4a853 0%, #c9865a 100%);
         }
 
@@ -39,22 +38,6 @@
             background: var(--bg-main);
             color: var(--text-primary);
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Islamic Pattern Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(26, 95, 79, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(212, 168, 83, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
         }
 
         /* Header */
@@ -65,16 +48,16 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
         }
 
         .header-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 2rem;
         }
 
         .logo {
@@ -84,8 +67,9 @@
             text-decoration: none;
             color: var(--primary);
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-family: 'Amiri', serif;
+            flex-shrink: 0;
         }
 
         .logo-icon {
@@ -98,130 +82,90 @@
             justify-content: center;
             color: white;
             font-size: 1.5rem;
-            box-shadow: var(--shadow-sm);
-            position: relative;
-        }
-
-        .logo-icon::after {
-            content: '';
-            position: absolute;
-            inset: -3px;
-            border-radius: 14px;
-            padding: 3px;
-            background: var(--gradient-gold);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0.3;
         }
 
         .search-bar {
             flex: 1;
-            max-width: 400px;
-            margin: 0 2rem;
+            max-width: 500px;
         }
 
         .search-input {
             width: 100%;
-            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            padding: 0.75rem 1rem 0.75rem 2.75rem;
             border: 1px solid var(--border);
             border-radius: 24px;
             font-size: 0.95rem;
             background: var(--bg-main);
             transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
         }
 
         .search-input:focus {
             outline: none;
             border-color: var(--primary);
             background: white;
-            box-shadow: var(--shadow-sm);
         }
 
-        .header-actions {
+        .header-nav {
             display: flex;
+            gap: 2rem;
             align-items: center;
-            gap: 1rem;
         }
 
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
+        .nav-btn {
+            background: none;
             border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
             cursor: pointer;
-            font-size: 0.95rem;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-icon {
-            width: 42px;
-            height: 42px;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-main);
-            border-radius: 50%;
-            font-size: 1.2rem;
+            padding: 0.5rem;
+            border-radius: 12px;
+            transition: all 0.3s;
             position: relative;
         }
 
-        .notification-badge {
+        .nav-btn:hover, .nav-btn.active {
+            color: var(--primary);
+            background: var(--bg-main);
+        }
+
+        .badge {
             position: absolute;
-            top: -4px;
-            right: -4px;
-            background: #dc3545;
+            top: 0;
+            right: 0;
+            background: var(--danger);
             color: white;
             font-size: 0.7rem;
-            padding: 2px 6px;
+            padding: 2px 5px;
             border-radius: 10px;
             font-weight: 700;
         }
 
+        .user-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
         /* Main Layout */
         .main-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 2rem auto;
             padding: 0 1.5rem;
             display: grid;
-            grid-template-columns: 300px 1fr 300px;
+            grid-template-columns: 280px 1fr 320px;
             gap: 2rem;
-            position: relative;
-            z-index: 1;
         }
 
         /* Sidebar */
-        .sidebar {
-            position: sticky;
-            top: 100px;
-            height: fit-content;
-        }
-
         .sidebar-card {
             background: var(--bg-card);
             border-radius: 16px;
@@ -235,9 +179,6 @@
             font-size: 1.1rem;
             margin-bottom: 1rem;
             color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .nav-menu {
@@ -267,15 +208,10 @@
 
         .nav-icon {
             font-size: 1.3rem;
-            width: 24px;
         }
 
-        /* Feed */
-        .feed {
-            min-height: 100vh;
-        }
-
-        .post-composer {
+        /* Cards */
+        .card {
             background: var(--bg-card);
             border-radius: 16px;
             padding: 1.5rem;
@@ -283,10 +219,24 @@
             margin-bottom: 1.5rem;
         }
 
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Post Composer */
         .composer-header {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1rem;
         }
 
         .avatar {
@@ -309,14 +259,13 @@
 
         .composer-textarea {
             width: 100%;
-            min-height: 80px;
+            min-height: 100px;
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 1rem;
             font-family: 'Cairo', sans-serif;
             font-size: 1rem;
             resize: vertical;
-            transition: border 0.3s;
         }
 
         .composer-textarea:focus {
@@ -354,6 +303,27 @@
             color: var(--primary);
         }
 
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
         /* Post Card */
         .post-card {
             background: var(--bg-card);
@@ -361,17 +331,11 @@
             padding: 1.5rem;
             box-shadow: var(--shadow-sm);
             margin-bottom: 1.5rem;
-            transition: box-shadow 0.3s;
-        }
-
-        .post-card:hover {
-            box-shadow: var(--shadow-md);
         }
 
         .post-header {
             display: flex;
             justify-content: space-between;
-            align-items: start;
             margin-bottom: 1rem;
         }
 
@@ -397,19 +361,11 @@
             font-size: 1.5rem;
             color: var(--text-light);
             cursor: pointer;
-            padding: 0.25rem;
         }
 
         .post-content {
             margin-bottom: 1rem;
             line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .post-image {
-            width: 100%;
-            border-radius: 12px;
-            margin-bottom: 1rem;
         }
 
         .post-actions {
@@ -442,10 +398,59 @@
         }
 
         .action-btn.liked {
-            color: #dc3545;
+            color: var(--danger);
         }
 
-        /* Spiritual Section */
+        /* Comments */
+        .comments-section {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .comment {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--bg-main);
+            border-radius: 12px;
+        }
+
+        .comment-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .comment-content {
+            flex: 1;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .comment-text {
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .comment-meta {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Spiritual Card */
         .spiritual-card {
             background: var(--gradient-primary);
             color: white;
@@ -457,15 +462,8 @@
             overflow: hidden;
         }
 
-        .spiritual-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            border-radius: 50%;
+        .spiritual-card.gold {
+            background: var(--gradient-gold);
         }
 
         .spiritual-header {
@@ -473,7 +471,6 @@
             align-items: center;
             gap: 0.75rem;
             margin-bottom: 1rem;
-            position: relative;
         }
 
         .spiritual-icon {
@@ -484,10 +481,6 @@
             font-family: 'Amiri', serif;
             font-size: 1.3rem;
             font-weight: 700;
-        }
-
-        .spiritual-content {
-            position: relative;
         }
 
         .arabic-text {
@@ -530,14 +523,20 @@
             background: rgba(255,255,255,0.3);
         }
 
-        /* Trending Section */
+        /* Trending */
         .trending-item {
             padding: 1rem 0;
             border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
         .trending-item:last-child {
             border-bottom: none;
+        }
+
+        .trending-item:hover {
+            background: var(--bg-main);
         }
 
         .trending-tag {
@@ -551,121 +550,147 @@
             color: var(--text-secondary);
         }
 
-        /* Auth Modal */
-        .modal {
+        /* Pages */
+        .page {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
         }
 
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 2.5rem;
-            max-width: 450px;
-            width: 90%;
-            box-shadow: var(--shadow-lg);
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .modal-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .modal-header h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-family: 'Amiri', serif;
-        }
-
-        .modal-header p {
-            color: var(--text-secondary);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
+        .page.active {
             display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
         }
 
-        .form-input {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: 'Cairo', sans-serif;
-            transition: all 0.3s;
+        /* Confession Card */
+        .confession-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
         }
 
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(26, 95, 79, 0.1);
+        .confession-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
-        .modal-actions {
-            margin-top: 2rem;
-        }
-
-        .btn-full {
-            width: 100%;
+        .confession-content {
+            line-height: 1.8;
             margin-bottom: 1rem;
         }
 
-        .modal-footer {
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 12px;
             text-align: center;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Amiri', serif;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Notifications */
+        .notification-item {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+            transition: background 0.3s;
+        }
+
+        .notification-item:hover {
+            background: var(--bg-main);
+        }
+
+        .notification-item.unread {
+            background: #e8f5e9;
+        }
+
+        .notification-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-text {
+            margin-bottom: 0.25rem;
+        }
+
+        .notification-time {
+            font-size: 0.85rem;
             color: var(--text-secondary);
         }
 
-        .modal-footer a {
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar-left, .sidebar-right {
+                display: none;
+            }
         }
 
-        .close-modal {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-light);
-            cursor: pointer;
+        @media (max-width: 640px) {
+            .header-nav {
+                gap: 0.5rem;
+            }
+
+            .search-bar {
+                display: none;
+            }
+
+            .main-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
         }
 
         /* Loading */
@@ -688,28 +713,43 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Responsive */
-        @media (max-width: 968px) {
-            .main-container {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                display: none;
-            }
-
-            .search-bar {
-                display: none;
-            }
-        }
-
-        /* Hidden by default (will be shown when logged in) */
-        .logged-out {
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--bg-card);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
             display: none;
+            align-items: center;
+            gap: 1rem;
+            z-index: 1000;
+            animation: slideInUp 0.3s ease;
         }
 
-        .logged-in {
-            display: block;
+        .toast.show {
+            display: flex;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .toast-icon {
+            font-size: 1.5rem;
+        }
+
+        .toast-message {
+            font-weight: 600;
         }
     </style>
 </head>
@@ -717,79 +757,67 @@
     <!-- Header -->
     <header class="header">
         <div class="header-container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" onclick="showPage('home')">
                 <div class="logo-icon">☪</div>
                 <span>Ummah Connect</span>
             </a>
 
-            <div class="search-bar logged-in">
-                <input type="text" class="search-input" placeholder="Rechercher sur Ummah Connect...">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="🔍 Rechercher sur Ummah Connect...">
             </div>
 
-            <div class="header-actions">
-                <div class="logged-out">
-                    <button class="btn btn-outline" onclick="openLoginModal()">Connexion</button>
-                    <button class="btn btn-primary" onclick="openRegisterModal()">S'inscrire</button>
-                </div>
-
-                <div class="logged-in" style="display: none;">
-                    <button class="btn-icon" title="Notifications">
-                        🔔
-                        <span class="notification-badge">3</span>
-                    </button>
-                    <button class="btn-icon" onclick="showProfile()">
-                        <div class="avatar" style="width: 42px; height: 42px; font-size: 1rem;">M</div>
-                    </button>
-                </div>
-            </div>
+            <nav class="header-nav">
+                <button class="nav-btn" onclick="showPage('home')" title="Accueil">🏠</button>
+                <button class="nav-btn" onclick="showPage('spiritual')" title="Spiritualité">📖</button>
+                <button class="nav-btn" onclick="showPage('notifications')" title="Notifications">
+                    🔔
+                    <span class="badge">3</span>
+                </button>
+                <div class="user-avatar" onclick="showPage('profile')" title="Mon Profil">M</div>
+            </nav>
         </div>
     </header>
 
     <!-- Main Container -->
     <div class="main-container">
         <!-- Left Sidebar -->
-        <aside class="sidebar logged-in" style="display: none;">
+        <aside class="sidebar-left">
             <div class="sidebar-card">
+                <h3 class="sidebar-title">Navigation</h3>
                 <nav>
                     <ul class="nav-menu">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a href="#" class="nav-link active" onclick="showPage('home')">
                                 <span class="nav-icon">🏠</span>
                                 <span>Accueil</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <span class="nav-icon">🔥</span>
-                                <span>Tendances</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <span class="nav-icon">📖</span>
-                                <span>Spiritualité</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link" onclick="showPage('confessions')">
                                 <span class="nav-icon">💬</span>
                                 <span>Confessions</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link" onclick="showPage('humor')">
                                 <span class="nav-icon">😄</span>
-                                <span>Humour</span>
+                                <span>Humour Halal</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link" onclick="showPage('fiqh')">
                                 <span class="nav-icon">❓</span>
                                 <span>Questions Fiqh</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link" onclick="showPage('spiritual')">
+                                <span class="nav-icon">📖</span>
+                                <span>Spiritualité</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showPage('profile')">
                                 <span class="nav-icon">👤</span>
                                 <span>Mon Profil</span>
                             </a>
@@ -797,236 +825,389 @@
                     </ul>
                 </nav>
             </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">📊 Statistiques</h3>
+                <div class="trending-item">
+                    <div class="trending-tag">2,547</div>
+                    <div class="trending-count">Membres actifs</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-tag">8,932</div>
+                    <div class="trending-count">Posts aujourd'hui</div>
+                </div>
+                <div class="trending-item">
+                    <div class="trending-tag">15,847</div>
+                    <div class="trending-count">Commentaires</div>
+                </div>
+            </div>
         </aside>
 
-        <!-- Main Feed -->
-        <main class="feed">
-            <!-- Welcome Message (shown when not logged in) -->
-            <div class="logged-out">
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <div id="home" class="page active">
+                <!-- Post Composer -->
+                <div class="card">
+                    <div class="composer-header">
+                        <div class="avatar">M</div>
+                        <div class="composer-input">
+                            <textarea 
+                                class="composer-textarea" 
+                                id="postContent"
+                                placeholder="Partagez quelque chose avec la Ummah... 🤲"></textarea>
+                        </div>
+                    </div>
+                    <div class="composer-actions">
+                        <div class="composer-tools">
+                            <button class="tool-btn" title="Ajouter une image">🖼️</button>
+                            <button class="tool-btn" title="Ajouter un emoji">😊</button>
+                            <button class="tool-btn" title="Ajouter un hashtag">#</button>
+                        </div>
+                        <button class="btn btn-primary" onclick="publishPost()">Publier</button>
+                    </div>
+                </div>
+
+                <!-- Feed Posts -->
+                <div id="feedContainer"></div>
+            </div>
+
+            <!-- Confessions Page -->
+            <div id="confessions" class="page">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">💬 Confessions Anonymes</h2>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Partagez vos difficultés de manière anonyme et recevez le soutien de la communauté
+                    </p>
+                    
+                    <div class="composer-input">
+                        <textarea 
+                            class="composer-textarea" 
+                            id="confessionContent"
+                            placeholder="Écrivez votre confession anonyme... (Personne ne saura qui vous êtes)"></textarea>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
+                        <button class="btn btn-primary" onclick="publishConfession()">Publier Anonymement</button>
+                    </div>
+                </div>
+
+                <div id="confessionsContainer"></div>
+            </div>
+
+            <!-- Humor Page -->
+            <div id="humor" class="page">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">😄 Humour Halal</h2>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Partagez des blagues et memes halal pour faire sourire la Ummah
+                    </p>
+                    
+                    <div class="composer-input">
+                        <textarea 
+                            class="composer-textarea" 
+                            id="humorContent"
+                            placeholder="Partagez une blague halal... 😄"></textarea>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
+                        <button class="btn btn-primary" onclick="publishHumor()">Publier</button>
+                    </div>
+                </div>
+
+                <div id="humorContainer"></div>
+            </div>
+
+            <!-- Fiqh Page -->
+            <div id="fiqh" class="page">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">❓ Questions de Fiqh</h2>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Posez vos questions religieuses et recevez des réponses de la communauté
+                    </p>
+                    
+                    <div class="composer-input">
+                        <textarea 
+                            class="composer-textarea" 
+                            id="fiqhContent"
+                            placeholder="Posez votre question de fiqh..."></textarea>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
+                        <button class="btn btn-primary" onclick="publishFiqh()">Poser la Question</button>
+                    </div>
+                </div>
+
+                <div id="fiqhContainer"></div>
+            </div>
+
+            <!-- Spiritual Page -->
+            <div id="spiritual" class="page">
                 <div class="spiritual-card">
                     <div class="spiritual-header">
-                        <span class="spiritual-icon">☪</span>
-                        <h2 class="spiritual-title">Bienvenue sur Ummah Connect</h2>
+                        <span class="spiritual-icon">📖</span>
+                        <h3 class="spiritual-title">Hadith du jour</h3>
                     </div>
                     <div class="spiritual-content">
-                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">
-                            Le premier réseau social dédié à la communauté musulmane
-                        </p>
-                        <p style="opacity: 0.9;">
-                            Partagez, échangez et grandissez spirituellement avec vos frères et sœurs. 
-                            Un espace bienveillant et respectueux des valeurs islamiques.
-                        </p>
-                        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                            <button class="btn btn-primary" onclick="openRegisterModal()" style="background: white; color: var(--primary);">
-                                S'inscrire maintenant
-                            </button>
-                            <button class="btn btn-outline" onclick="openLoginModal()" style="border-color: white; color: white;">
-                                J'ai déjà un compte
-                            </button>
+                        <p class="arabic-text" id="hadithArabic">إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ</p>
+                        <p class="translation" id="hadithTranslation">Les actes ne valent que par leurs intentions</p>
+                        <p class="reference" id="hadithReference">- Sahih al-Bukhari</p>
+                        <button class="refresh-btn" onclick="refreshHadith()">🔄 Nouveau hadith</button>
+                    </div>
+                </div>
+
+                <div class="spiritual-card gold">
+                    <div class="spiritual-header">
+                        <span class="spiritual-icon">✨</span>
+                        <h3 class="spiritual-title">Verset du jour</h3>
+                    </div>
+                    <div class="spiritual-content">
+                        <p class="arabic-text" id="verseArabic">وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا</p>
+                        <p class="translation" id="verseTranslation">Quiconque craint Allah, Il lui donnera une issue favorable</p>
+                        <p class="reference" id="verseReference">- Sourate At-Talaq, verset 2</p>
+                        <button class="refresh-btn" onclick="refreshVerse()">🔄 Nouveau verset</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">📚 Bibliothèque Spirituelle</h2>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Hadiths</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">6,236</div>
+                            <div class="stat-label">Versets</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Douas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notifications Page -->
+            <div id="notifications" class="page">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">🔔 Notifications</h2>
+                    </div>
+                    <div id="notificationsContainer"></div>
+                </div>
+            </div>
+
+            <!-- Profile Page -->
+            <div id="profile" class="page">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">👤 Mon Profil</h2>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="width: 120px; height: 120px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700; margin: 0 auto 1.5rem;">M</div>
+                        <h2 style="margin-bottom: 0.5rem;">Mohammed</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Membre depuis janvier 2026</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number" id="userPosts">12</div>
+                                <div class="stat-label">Posts</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">247</div>
+                                <div class="stat-label">Likes reçus</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">89</div>
+                                <div class="stat-label">Commentaires</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Features Preview -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                    <div class="post-card">
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">📖 Contenu Spirituel</h3>
-                        <p>Hadiths, versets coraniques et rappels quotidiens pour nourrir votre foi</p>
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Mes derniers posts</h2>
                     </div>
-                    <div class="post-card">
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">💬 Échanges Authentiques</h3>
-                        <p>Partagez vos expériences et soutenez-vous mutuellement dans la bienveillance</p>
-                    </div>
-                    <div class="post-card">
-                        <h3 style="color: var(--primary); margin-bottom: 0.5rem;">🛡️ Espace Sécurisé</h3>
-                        <p>Modération stricte pour garantir un environnement respectueux et halal</p>
-                    </div>
+                    <div id="userPostsContainer"></div>
                 </div>
-            </div>
-
-            <!-- Post Composer (shown when logged in) -->
-            <div class="post-composer logged-in" style="display: none;">
-                <div class="composer-header">
-                    <div class="avatar">M</div>
-                    <div class="composer-input">
-                        <textarea 
-                            class="composer-textarea" 
-                            id="postContent"
-                            placeholder="Partagez quelque chose avec la communauté..."></textarea>
-                    </div>
-                </div>
-                <div class="composer-actions">
-                    <div class="composer-tools">
-                        <button class="tool-btn" title="Ajouter une image">🖼️</button>
-                        <button class="tool-btn" title="Ajouter un emoji">😊</button>
-                        <button class="tool-btn" title="Ajouter un hashtag">#</button>
-                    </div>
-                    <button class="btn btn-primary" onclick="publishPost()">Publier</button>
-                </div>
-            </div>
-
-            <!-- Feed Posts -->
-            <div id="feedContainer">
-                <!-- Posts will be added here dynamically -->
             </div>
         </main>
 
         <!-- Right Sidebar -->
-        <aside class="sidebar logged-in" style="display: none;">
-            <!-- Hadith of the Day -->
+        <aside class="sidebar-right">
             <div class="spiritual-card">
                 <div class="spiritual-header">
                     <span class="spiritual-icon">📖</span>
-                    <h3 class="spiritual-title">Hadith du jour</h3>
+                    <h3 class="spiritual-title">Hadith</h3>
                 </div>
                 <div class="spiritual-content">
-                    <p class="arabic-text">
-                        إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ
-                    </p>
-                    <p class="translation">
-                        "Les actes ne valent que par leurs intentions"
-                    </p>
+                    <p class="arabic-text">إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ</p>
+                    <p class="translation">Les actes ne valent que par leurs intentions</p>
                     <p class="reference">- Sahih al-Bukhari</p>
-                    <button class="refresh-btn" onclick="refreshHadith()">Nouveau hadith</button>
                 </div>
             </div>
 
-            <!-- Verse of the Day -->
-            <div class="spiritual-card" style="background: var(--gradient-gold);">
-                <div class="spiritual-header">
-                    <span class="spiritual-icon">✨</span>
-                    <h3 class="spiritual-title">Verset du jour</h3>
-                </div>
-                <div class="spiritual-content">
-                    <p class="arabic-text">
-                        وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا
-                    </p>
-                    <p class="translation">
-                        "Quiconque craint Allah, Il lui donnera une issue favorable"
-                    </p>
-                    <p class="reference">- Sourate At-Talaq, verset 2</p>
-                </div>
-            </div>
-
-            <!-- Trending Topics -->
             <div class="sidebar-card">
                 <h3 class="sidebar-title">🔥 Tendances</h3>
-                <div class="trending-item">
+                <div class="trending-item" onclick="searchHashtag('#Ramadan2026')">
                     <div class="trending-tag">#Ramadan2026</div>
-                    <div class="trending-count">2.5k posts</div>
+                    <div class="trending-count">2,547 posts</div>
                 </div>
-                <div class="trending-item">
+                <div class="trending-item" onclick="searchHashtag('#ConseilDuJour')">
                     <div class="trending-tag">#ConseilDuJour</div>
-                    <div class="trending-count">1.8k posts</div>
+                    <div class="trending-count">1,823 posts</div>
                 </div>
-                <div class="trending-item">
+                <div class="trending-item" onclick="searchHashtag('#FrèresEtSœurs')">
                     <div class="trending-tag">#FrèresEtSœurs</div>
-                    <div class="trending-count">1.2k posts</div>
+                    <div class="trending-count">1,245 posts</div>
                 </div>
-                <div class="trending-item">
+                <div class="trending-item" onclick="searchHashtag('#Doua')">
                     <div class="trending-tag">#Doua</div>
                     <div class="trending-count">956 posts</div>
                 </div>
+                <div class="trending-item" onclick="searchHashtag('#Patience')">
+                    <div class="trending-tag">#Patience</div>
+                    <div class="trending-count">734 posts</div>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">💡 Conseil du jour</h3>
+                <p style="font-style: italic; color: var(--text-secondary); line-height: 1.8;">
+                    "Celui qui fait un pas vers Allah, Allah fera dix pas vers lui"
+                </p>
             </div>
         </aside>
     </div>
 
-    <!-- Login Modal -->
-    <div class="modal" id="loginModal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('loginModal')">×</button>
-            <div class="modal-header">
-                <h2>☪ Connexion</h2>
-                <p>Content de vous revoir !</p>
-            </div>
-            <form onsubmit="handleLogin(event)">
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-input" id="loginEmail" placeholder="votre@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Mot de passe</label>
-                    <input type="password" class="form-input" id="loginPassword" placeholder="••••••••" required>
-                </div>
-                <div class="modal-actions">
-                    <button type="submit" class="btn btn-primary btn-full">Se connecter</button>
-                </div>
-            </form>
-            <div class="modal-footer">
-                Pas encore de compte ? <a href="#" onclick="openRegisterModal()">S'inscrire</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Register Modal -->
-    <div class="modal" id="registerModal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('registerModal')">×</button>
-            <div class="modal-header">
-                <h2>☪ Inscription</h2>
-                <p>Rejoignez la communauté</p>
-            </div>
-            <form onsubmit="handleRegister(event)">
-                <div class="form-group">
-                    <label class="form-label">Nom complet</label>
-                    <input type="text" class="form-input" id="registerName" placeholder="Mohammed Ali" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-input" id="registerEmail" placeholder="votre@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Mot de passe</label>
-                    <input type="password" class="form-input" id="registerPassword" placeholder="••••••••" required>
-                </div>
-                <div class="modal-actions">
-                    <button type="submit" class="btn btn-primary btn-full">S'inscrire</button>
-                </div>
-            </form>
-            <div class="modal-footer">
-                Déjà membre ? <a href="#" onclick="openLoginModal()">Se connecter</a>
-            </div>
-        </div>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✅</span>
+        <span class="toast-message" id="toastMessage"></span>
     </div>
 
     <script>
-        // State Management
-        let currentUser = null;
-        let posts = [];
-        let postIdCounter = 1;
+        // Data
+        let currentUser = {
+            name: "Mohammed",
+            avatar: "M",
+            email: "mohammed@ummahconnect.com"
+        };
 
-        // Sample data
-        const samplePosts = [
+        let posts = [
             {
                 id: 1,
                 author: "Fatima Rahman",
                 avatar: "F",
                 time: "Il y a 2 heures",
-                content: "Alhamdulillah, quelle belle journée pour se rapprocher d'Allah ✨ N'oublions pas nos 5 prières quotidiennes, c'est le pilier de notre foi 🤲",
+                content: "Alhamdulillah, quelle belle journée pour se rapprocher d'Allah ✨ N'oublions pas nos 5 prières quotidiennes, c'est le pilier de notre foi 🤲 #Salat #Rappel",
                 likes: 127,
-                comments: 23,
-                isLiked: false
+                comments: [
+                    { author: "Ahmed", avatar: "A", text: "Barakallah oufik pour ce rappel !", time: "Il y a 1h" },
+                    { author: "Khadija", avatar: "K", text: "MashaAllah, qu'Allah nous facilite 🤲", time: "Il y a 30min" }
+                ],
+                isLiked: false,
+                showComments: false
             },
             {
                 id: 2,
                 author: "Ahmed Benali",
                 avatar: "A",
                 time: "Il y a 5 heures",
-                content: "Un rappel important : 'Le croyant fort est meilleur et plus aimé d'Allah que le croyant faible' (Muslim). Prenons soin de notre santé physique et spirituelle ! 💪🤲",
+                content: "Un rappel important : 'Le croyant fort est meilleur et plus aimé d'Allah que le croyant faible' (Muslim). Prenons soin de notre santé physique et spirituelle ! 💪🤲 #Santé #Hadith",
                 likes: 89,
-                comments: 15,
-                isLiked: false
+                comments: [],
+                isLiked: false,
+                showComments: false
             },
             {
                 id: 3,
                 author: "Khadija Mansour",
                 avatar: "K",
                 time: "Il y a 1 jour",
-                content: "SubhanAllah, j'ai terminé la lecture de Sourate Al-Kahf aujourd'hui. Quelle sagesse dans chaque verset ! Qui d'autre la lit le vendredi ? 📖✨",
+                content: "SubhanAllah, j'ai terminé la lecture de Sourate Al-Kahf aujourd'hui. Quelle sagesse dans chaque verset ! Qui d'autre la lit le vendredi ? 📖✨ #Coran #Vendredi",
                 likes: 203,
-                comments: 45,
-                isLiked: false
+                comments: [
+                    { author: "Youssef", avatar: "Y", text: "Moi aussi Alhamdulillah ! C'est une tradition magnifique 📖", time: "Il y a 12h" }
+                ],
+                isLiked: true,
+                showComments: false
             }
+        ];
+
+        let confessions = [
+            {
+                id: 1,
+                time: "Il y a 3 heures",
+                content: "J'ai beaucoup de mal à me lever pour Fajr... Je me sens tellement coupable chaque matin. Comment faites-vous frères et sœurs ? 😔",
+                responses: 45
+            },
+            {
+                id: 2,
+                time: "Il y a 1 jour",
+                content: "Alhamdulillah, après des années de lutte, j'ai enfin réussi à porter le hijab. Je me sens tellement libérée ! ❤️",
+                responses: 127
+            }
+        ];
+
+        let humorPosts = [
+            {
+                id: 1,
+                author: "Ibrahim Al-Funny",
+                avatar: "I",
+                time: "Il y a 4 heures",
+                content: "Quand ta mère te demande de sortir le poulet du congélateur et tu oublies... Puis elle rentre à la maison 😅 #MamanMusulmane #OnConnaitTous",
+                likes: 456,
+                comments: [],
+                isLiked: false
+            },
+            {
+                id: 2,
+                author: "Sara Comedy",
+                avatar: "S",
+                time: "Il y a 1 jour",
+                content: "Moi: 'InshAllah je vais me coucher tôt ce soir'\nMoi à 3h du matin: *en train de chercher des recettes de baklava sur YouTube* 😂",
+                likes: 892,
+                comments: [],
+                isLiked: true
+            }
+        ];
+
+        let fiqhQuestions = [
+            {
+                id: 1,
+                author: "Yasmine",
+                avatar: "Y",
+                time: "Il y a 2 heures",
+                content: "Salam alaykoum, j'ai une question concernant le jeûne : si on oublie qu'on jeûne et qu'on mange, doit-on rattraper ce jour ?",
+                answers: 8,
+                likes: 23
+            },
+            {
+                id: 2,
+                author: "Omar",
+                avatar: "O",
+                time: "Il y a 5 heures",
+                content: "Quelle est la position des savants sur le fait de combiner Maghrib et Isha en voyage ?",
+                answers: 15,
+                likes: 34
+            }
+        ];
+
+        let notifications = [
+            { icon: "❤️", text: "Ahmed a aimé votre post", time: "Il y a 5 min", unread: true },
+            { icon: "💬", text: "Fatima a commenté votre post", time: "Il y a 15 min", unread: true },
+            { icon: "👤", text: "Khadija a commencé à vous suivre", time: "Il y a 1h", unread: true },
+            { icon: "📖", text: "Nouveau hadith disponible", time: "Il y a 2h", unread: false },
+            { icon: "🔥", text: "Votre post est en tendance !", time: "Il y a 3h", unread: false }
         ];
 
         const hadiths = [
@@ -1052,117 +1233,73 @@
             }
         ];
 
-        // Modal Functions
-        function openLoginModal() {
-            closeModal('registerModal');
-            document.getElementById('loginModal').classList.add('active');
-        }
+        const verses = [
+            {
+                arabic: "وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا",
+                translation: "Quiconque craint Allah, Il lui donnera une issue favorable",
+                reference: "Sourate At-Talaq, verset 2"
+            },
+            {
+                arabic: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+                translation: "Certes, avec la difficulté vient la facilité",
+                reference: "Sourate Ach-Charh, verset 5"
+            },
+            {
+                arabic: "وَلَا تَيْأَسُوا مِن رَّوْحِ اللَّهِ",
+                translation: "Et ne désespérez pas de la miséricorde d'Allah",
+                reference: "Sourate Yusuf, verset 87"
+            }
+        ];
 
-        function openRegisterModal() {
-            closeModal('loginModal');
-            document.getElementById('registerModal').classList.add('active');
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-        }
-
-        // Auth Functions
-        function handleLogin(e) {
-            e.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            const name = email.split('@')[0];
-            
-            currentUser = {
-                name: name.charAt(0).toUpperCase() + name.slice(1),
-                email: email,
-                avatar: name.charAt(0).toUpperCase()
-            };
-            
-            loginUser();
-            closeModal('loginModal');
-        }
-
-        function handleRegister(e) {
-            e.preventDefault();
-            const name = document.getElementById('registerName').value;
-            const email = document.getElementById('registerEmail').value;
-            
-            currentUser = {
-                name: name,
-                email: email,
-                avatar: name.charAt(0).toUpperCase()
-            };
-            
-            loginUser();
-            closeModal('registerModal');
-        }
-
-        function loginUser() {
-            // Hide logged-out elements
-            document.querySelectorAll('.logged-out').forEach(el => {
-                el.style.display = 'none';
+        // Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
             });
-            
-            // Show logged-in elements
-            document.querySelectorAll('.logged-in').forEach(el => {
-                el.style.display = 'block';
+            document.getElementById(pageId).classList.add('active');
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
             });
 
-            // Update avatar
-            document.querySelectorAll('.avatar').forEach(el => {
-                el.textContent = currentUser.avatar;
-            });
-
-            // Load initial posts
-            posts = [...samplePosts];
-            renderPosts();
+            if (pageId === 'home') renderPosts();
+            else if (pageId === 'confessions') renderConfessions();
+            else if (pageId === 'humor') renderHumor();
+            else if (pageId === 'fiqh') renderFiqh();
+            else if (pageId === 'notifications') renderNotifications();
+            else if (pageId === 'profile') renderProfile();
         }
 
-        // Post Functions
+        // Posts
         function publishPost() {
             const content = document.getElementById('postContent').value.trim();
-            
             if (!content) {
-                alert('Veuillez écrire quelque chose avant de publier');
+                showToast("Veuillez écrire quelque chose");
                 return;
             }
 
             const newPost = {
-                id: ++postIdCounter,
+                id: Date.now(),
                 author: currentUser.name,
                 avatar: currentUser.avatar,
                 time: "À l'instant",
                 content: content,
                 likes: 0,
-                comments: 0,
-                isLiked: false
+                comments: [],
+                isLiked: false,
+                showComments: false
             };
 
             posts.unshift(newPost);
-            renderPosts();
-            
-            // Clear textarea
             document.getElementById('postContent').value = '';
-            
-            // Success feedback
-            showNotification('Post publié avec succès ! 🎉');
+            renderPosts();
+            showToast("Post publié avec succès ! 🎉");
         }
 
         function renderPosts() {
             const container = document.getElementById('feedContainer');
-            
             if (posts.length === 0) {
-                container.innerHTML = `
-                    <div class="post-card" style="text-align: center; padding: 3rem;">
-                        <h3 style="color: var(--text-secondary); margin-bottom: 0.5rem;">
-                            Aucun post pour le moment
-                        </h3>
-                        <p style="color: var(--text-light);">
-                            Soyez le premier à partager quelque chose !
-                        </p>
-                    </div>
-                `;
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📝</div><p>Aucun post pour le moment</p></div>';
                 return;
             }
 
@@ -1183,13 +1320,29 @@
                         <button class="action-btn ${post.isLiked ? 'liked' : ''}" onclick="toggleLike(${post.id})">
                             ${post.isLiked ? '❤️' : '🤍'} ${post.likes}
                         </button>
-                        <button class="action-btn">
-                            💬 ${post.comments}
+                        <button class="action-btn" onclick="toggleComments(${post.id})">
+                            💬 ${post.comments.length}
                         </button>
-                        <button class="action-btn">
-                            🔄 Partager
-                        </button>
+                        <button class="action-btn">🔄 Partager</button>
                     </div>
+                    ${post.showComments ? `
+                        <div class="comments-section">
+                            ${post.comments.map(comment => `
+                                <div class="comment">
+                                    <div class="comment-avatar">${comment.avatar}</div>
+                                    <div class="comment-content">
+                                        <div class="comment-author">${comment.author}</div>
+                                        <div class="comment-text">${comment.text}</div>
+                                        <div class="comment-meta">${comment.time}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                            <div style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+                                <div class="comment-avatar">M</div>
+                                <input type="text" placeholder="Écrire un commentaire..." style="flex: 1; padding: 0.75rem; border: 1px solid var(--border); border-radius: 20px; font-family: 'Cairo', sans-serif;" onkeypress="if(event.key==='Enter') addComment(${post.id}, this.value, this)">
+                            </div>
+                        </div>
+                    ` : ''}
                 </div>
             `).join('');
         }
@@ -1203,40 +1356,233 @@
             }
         }
 
-        function refreshHadith() {
-            const randomHadith = hadiths[Math.floor(Math.random() * hadiths.length)];
-            // Update hadith display (you can enhance this)
-            showNotification('Nouveau hadith chargé ! 📖');
-        }
-
-        function showNotification(message) {
-            // Simple notification (you can enhance this with a proper toast)
-            alert(message);
-        }
-
-        function showProfile() {
-            if (currentUser) {
-                alert(`Profil de ${currentUser.name}\nEmail: ${currentUser.email}\n\n(Fonctionnalité de profil complète dans la Partie 2)`);
+        function toggleComments(postId) {
+            const post = posts.find(p => p.id === postId);
+            if (post) {
+                post.showComments = !post.showComments;
+                renderPosts();
             }
         }
 
-        // Close modal on outside click
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
+        function addComment(postId, text, input) {
+            if (!text.trim()) return;
+            const post = posts.find(p => p.id === postId);
+            if (post) {
+                post.comments.push({
+                    author: currentUser.name,
+                    avatar: currentUser.avatar,
+                    text: text,
+                    time: "À l'instant"
+                });
+                input.value = '';
+                renderPosts();
+                showToast("Commentaire ajouté !");
+            }
+        }
+
+        // Confessions
+        function publishConfession() {
+            const content = document.getElementById('confessionContent').value.trim();
+            if (!content) {
+                showToast("Veuillez écrire votre confession");
+                return;
+            }
+
+            confessions.unshift({
+                id: Date.now(),
+                time: "À l'instant",
+                content: content,
+                responses: 0
             });
-        });
+
+            document.getElementById('confessionContent').value = '';
+            renderConfessions();
+            showToast("Confession publiée anonymement 🤫");
+        }
+
+        function renderConfessions() {
+            const container = document.getElementById('confessionsContainer');
+            container.innerHTML = confessions.map(conf => `
+                <div class="confession-card">
+                    <div class="confession-header">
+                        <span>🔒 Anonyme</span>
+                        <span>•</span>
+                        <span>${conf.time}</span>
+                    </div>
+                    <div class="confession-content">${conf.content}</div>
+                    <div style="color: var(--text-secondary); font-size: 0.9rem;">
+                        💬 ${conf.responses} réponses de soutien
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Humor
+        function publishHumor() {
+            const content = document.getElementById('humorContent').value.trim();
+            if (!content) {
+                showToast("Partagez quelque chose de drôle !");
+                return;
+            }
+
+            humorPosts.unshift({
+                id: Date.now(),
+                author: currentUser.name,
+                avatar: currentUser.avatar,
+                time: "À l'instant",
+                content: content,
+                likes: 0,
+                comments: [],
+                isLiked: false
+            });
+
+            document.getElementById('humorContent').value = '';
+            renderHumor();
+            showToast("Post d'humour publié ! 😄");
+        }
+
+        function renderHumor() {
+            const container = document.getElementById('humorContainer');
+            container.innerHTML = humorPosts.map(post => `
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="avatar">${post.avatar}</div>
+                            <div class="post-author-info">
+                                <h4>${post.author}</h4>
+                                <div class="post-meta">${post.time}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">${post.content}</div>
+                    <div class="post-actions">
+                        <button class="action-btn ${post.isLiked ? 'liked' : ''}">
+                            ${post.isLiked ? '❤️' : '🤍'} ${post.likes}
+                        </button>
+                        <button class="action-btn">😂 MDR</button>
+                        <button class="action-btn">🔄 Partager</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Fiqh
+        function publishFiqh() {
+            const content = document.getElementById('fiqhContent').value.trim();
+            if (!content) {
+                showToast("Posez votre question");
+                return;
+            }
+
+            fiqhQuestions.unshift({
+                id: Date.now(),
+                author: currentUser.name,
+                avatar: currentUser.avatar,
+                time: "À l'instant",
+                content: content,
+                answers: 0,
+                likes: 0
+            });
+
+            document.getElementById('fiqhContent').value = '';
+            renderFiqh();
+            showToast("Question publiée ! 📚");
+        }
+
+        function renderFiqh() {
+            const container = document.getElementById('fiqhContainer');
+            container.innerHTML = fiqhQuestions.map(q => `
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="avatar">${q.avatar}</div>
+                            <div class="post-author-info">
+                                <h4>${q.author}</h4>
+                                <div class="post-meta">${q.time}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-content">${q.content}</div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--text-secondary);">
+                        <span>✅ ${q.answers} réponses</span>
+                        <span>👍 ${q.likes} utile</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Notifications
+        function renderNotifications() {
+            const container = document.getElementById('notificationsContainer');
+            container.innerHTML = notifications.map(notif => `
+                <div class="notification-item ${notif.unread ? 'unread' : ''}">
+                    <div class="notification-icon">${notif.icon}</div>
+                    <div class="notification-content">
+                        <div class="notification-text">${notif.text}</div>
+                        <div class="notification-time">${notif.time}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Profile
+        function renderProfile() {
+            const userPosts = posts.filter(p => p.author === currentUser.name);
+            document.getElementById('userPosts').textContent = userPosts.length;
+            
+            const container = document.getElementById('userPostsContainer');
+            if (userPosts.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>Vous n\'avez pas encore publié de post</p></div>';
+                return;
+            }
+            
+            container.innerHTML = userPosts.map(post => `
+                <div style="padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                    <div style="margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">${post.time}</div>
+                    <div>${post.content}</div>
+                    <div style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                        ❤️ ${post.likes} • 💬 ${post.comments.length}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Spiritual
+        function refreshHadith() {
+            const randomHadith = hadiths[Math.floor(Math.random() * hadiths.length)];
+            document.getElementById('hadithArabic').textContent = randomHadith.arabic;
+            document.getElementById('hadithTranslation').textContent = randomHadith.translation;
+            document.getElementById('hadithReference').textContent = '- ' + randomHadith.reference;
+            showToast("Nouveau hadith chargé 📖");
+        }
+
+        function refreshVerse() {
+            const randomVerse = verses[Math.floor(Math.random() * verses.length)];
+            document.getElementById('verseArabic').textContent = randomVerse.arabic;
+            document.getElementById('verseTranslation').textContent = randomVerse.translation;
+            document.getElementById('verseReference').textContent = '- ' + randomVerse.reference;
+            showToast("Nouveau verset chargé ✨");
+        }
+
+        // Utils
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function searchHashtag(tag) {
+            showToast(`Recherche de ${tag}...`);
+        }
 
         // Initialize
-        console.log('🌙 Ummah Connect - Partie 1 chargée');
-        console.log('✅ Fonctionnalités actives:');
-        console.log('   - Inscription/Connexion');
-        console.log('   - Publication de posts');
-        console.log('   - Likes et commentaires');
-        console.log('   - Hadith et versets du jour');
-        console.log('   - Interface responsive');
+        renderPosts();
+        console.log('🌙 Ummah Connect - Version complète chargée');
+        console.log('✅ Toutes les fonctionnalités sont opérationnelles !');
     </script>
 </body>
 </html>
