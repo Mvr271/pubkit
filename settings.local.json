@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\\\Users\\\\momob\\\\Desktop\\\\Nouveau dossier \\(2\\)\\\\mode-clair\")",
+      "Bash(powershell -Command \"Set-Content -Path ''C:\\\\Users\\\\momob\\\\Desktop\\\\Nouveau dossier \\(2\\)\\\\mode-clair\\\\app.html'' -Value ''test''\")",
+      "Bash(cmd /c \"echo test > \"\"C:\\\\Users\\\\momob\\\\Desktop\\\\Nouveau dossier \\(2\\)\\\\mode-clair\\\\app.html\"\"\")",
+      "Bash(/bin/bash -c \"echo test\")"
+    ]
+  }
+}
